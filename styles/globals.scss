@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+#linkedin,
+#github,
+#facebook,
+#instagram {
+  fill: black;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#linkedin:hover {
+  fill: #0a63bc;
+}
+#github:hover {
+  fill: #65a81b;
+}
+#facebook:hover {
+  fill: #1773ea;
+}
+#instagram:hover {
+  fill: #fd5949;
+}
