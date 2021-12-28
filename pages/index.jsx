@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/Layout'
-import { Linkedin, Github, Facebook, Instagram } from '../components/SvgIcons'
+import { Linkedin, Github, Facebook, Instagram, Twitter } from '../components/SvgIcons'
 import Styles from '../styles/home.module.scss'
 
 export default function Home() {
@@ -27,6 +27,7 @@ export default function Home() {
                       <li className='mr-4'><Github /></li>
                       <li className='mr-4'><Facebook /></li>
                       <li className='mr-4'><Instagram /></li>
+                      <li><Twitter /></li>
                     </ul>
                   </div>
                   <div className="xs:col-span-12 lg:col-span-7 xs:order-1 lg:order-2">

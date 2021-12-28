@@ -11,7 +11,8 @@
 #linkedin,
 #github,
 #facebook,
-#instagram {
+#instagram,
+#twitter {
   fill: black;
   transition: all 0.5s ease-in-out;
   &:hover {
@@ -30,4 +31,7 @@
 }
 #instagram:hover {
   fill: #fd5949;
+}
+#twitter:hover {
+  fill: #1a8cd8;
 }
