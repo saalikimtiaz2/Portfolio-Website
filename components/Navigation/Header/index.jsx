@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { Logo } from '../../SvgIcons'
 
 function Header() {
     const [navbar, setNavbar] = useState(false);
@@ -15,8 +17,8 @@ function Header() {
         window.addEventListener('scroll', changeBackground);
     }, []);
     return (
-        <div className={`fixed xs:px-6 lg:px-20 py-2 z-50  ${navbar ? 'shadow-xl' : ''}`}>
-            <h1 className='text-24 font-semibold text-primary uppercase'>Salik <span className='text-black font-light'>Imtiaz</span></h1>
+        <div className={`fixed xs:px-6 lg:px-20 py-2 z-50 w-screen ${navbar ? 'shadow-xl bg-white' : ''}`}>
+            <Link href='/' className='cursor-pointer'><Logo height='52px' fill='#f9c519' /></Link>
         </div>
     )
 }
