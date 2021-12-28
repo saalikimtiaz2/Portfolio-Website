@@ -43,7 +43,7 @@ export default function Home() {
                 <h1 className="text-48 text-primary leading-tight font-bold">services</h1>
                 <p className='max-w-65'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis illo nesciunt exercitationem animi est tempora ut iusto architecto earum explicabo.</p>
                 <PrimaryButton>Download Resume</PrimaryButton>
-                <div className={`${Styles.card} ml-auto`}>
+                <div className={`${Styles.card} xs:mx-auto lg:ml-auto`}>
                   <UIUX />
                   <h1 className="text-18 font-medium uppercase mt-4"><span className='text-primary'>UI/UX</span> Development</h1>
                   <p className='text-14 text-gray text-center max-w-25 mt-2'>
