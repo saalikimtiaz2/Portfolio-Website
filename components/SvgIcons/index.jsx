@@ -139,4 +139,4 @@ export function UIUX() {
             </g>
         </svg>
     )
-} 
+}

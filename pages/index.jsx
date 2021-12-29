@@ -34,27 +34,30 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <h2 className={Styles.bluredText}>Salik Imtiaz</h2>
         </section>
         <section>
-          <div className='lg:container lg:mx-auto px-4 py-16'>
-            <div className="grid grid-cols-12">
-              <div className="xs:col-span-12 lg:col-span-7">
+          <div className='lg:container lg:mx-auto xs:px-4 md:px-16 lg:px-0 py-16'>
+            <div className="grid grid-cols-12 xs:gap-0 lg:gap-10">
+              <div className="xs:col-span-12 md:col-span-6 lg:col-span-7">
                 <h1 className="text-32 font-light leading-tight italic">My awesome</h1>
                 <h1 className="text-48 text-primary leading-tight font-bold">services</h1>
                 <p className='max-w-65'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis illo nesciunt exercitationem animi est tempora ut iusto architecto earum explicabo.</p>
                 <PrimaryButton>Download Resume</PrimaryButton>
-                <div className={`${Styles.card} xs:mx-auto lg:ml-auto`}>
-                  <UIUX />
-                  <h1 className="text-18 font-medium uppercase mt-4"><span className='text-primary'>UI/UX</span> Development</h1>
+                <div className={`${Styles.card} xs:mx-auto md:mx-0 md:ml-auto`}>
+                  <Developer />
+                  <h1 className="text-18 font-medium uppercase mt-4"><span className='text-primary'>Frontend</span> Development</h1>
+
                   <p className='text-14 text-gray text-center max-w-25 mt-2'>
                     Lorem ipsum dolor sit amet consectetur.
                   </p>
                 </div>
               </div>
-              <div className="xs:col-span-12 lg:col-span-5 xs:gap-4 lg:gap-10 flex flex-col items-center justify-center">
+              <div className="xs:col-span-12 md:col-span-6 lg:col-span-5 flex flex-col items-center justify-center">
                 <div className={Styles.card}>
-                  <Developer />
-                  <h1 className="text-18 font-medium uppercase mt-4"><span className='text-primary'>Frontend</span> Development</h1>
+                  <UIUX />
+                  <h1 className="text-18 font-medium uppercase mt-4"><span className='text-primary'>UI/UX</span> Development</h1>
+
                   <p className='text-14 text-gray text-center max-w-25 mt-2'>
                     Lorem ipsum dolor sit amet consectetur.
                   </p>
@@ -66,6 +69,8 @@ export default function Home() {
                     Lorem ipsum dolor sit amet consectetur.
                   </p>
                 </div>
+              </div><div className="xs:col-span-12 lg:col-span-7">
+
               </div>
             </div>
           </div>

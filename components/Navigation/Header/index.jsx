@@ -18,7 +18,7 @@ function Header() {
     }, []);
     return (
         <div className={`fixed xs:px-6 lg:px-20 py-2 z-50 w-screen ${navbar ? 'shadow-xl bg-white' : ''}`}>
-            <Link href='/' className='cursor-pointer'><Logo height='52px' fill='#f9c519' /></Link>
+            <Link href='/' className={`${navbar ? 'xs:mx-auto' : ''}`}><Logo height='52px' fill='#f9c519' /></Link>
         </div>
     )
 }

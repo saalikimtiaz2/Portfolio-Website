@@ -4,6 +4,21 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 2rem 0;
+  position: relative;
+}
+
+.bluredText {
+  font-size: 150px;
+  font-family: "Praise", cursive;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -40%) rotate(-45deg);
+  z-index: -5;
+  opacity: 0.07;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .card {
