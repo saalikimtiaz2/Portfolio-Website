@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import { PrimaryButton } from '../components/Buttons'
 import { Linkedin, Github, Facebook, Instagram, Twitter, Developer, Graphic, UIUX } from '../components/SvgIcons'
+import { icons } from '../models'
 import Styles from '../styles/home.module.scss'
 
 export default function Home() {
@@ -37,7 +38,7 @@ export default function Home() {
           <h2 className={Styles.bluredText}>Salik Imtiaz</h2>
         </section>
         <section>
-          <div className='lg:container lg:mx-auto xs:px-4 md:px-16 lg:px-0 py-16'>
+          <div className='lg:container lg:mx-auto xs:px-4 md:px-16 lg:px-'>
             <div className="grid grid-cols-12 xs:gap-0 lg:gap-10">
               <div className="xs:col-span-12 md:col-span-6 lg:col-span-7">
                 <h1 className="text-32 font-light leading-tight italic">My awesome</h1>
@@ -69,12 +70,11 @@ export default function Home() {
                     Lorem ipsum dolor sit amet consectetur.
                   </p>
                 </div>
-              </div><div className="xs:col-span-12 lg:col-span-7">
-
               </div>
             </div>
           </div>
         </section>
+
       </Layout>
     </>
   )

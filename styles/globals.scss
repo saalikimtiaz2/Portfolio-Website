@@ -10,6 +10,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+section {
+  padding: 4rem 0;
+}
+
 #linkedin,
 #github,
 #facebook,
@@ -51,4 +55,9 @@
 }
 .st4 {
   fill: #00e92a;
+}
+
+.icon {
+  height: 32px;
+  width: auto;
 }
