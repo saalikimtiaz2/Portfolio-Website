@@ -31,28 +31,4 @@ export const icons = [
         image:'/assets/icons/redux.svg',
         name:"Redux"
     },
-    {
-        image:'/assets/icons/antd.svg',
-        name:"Ant Design"
-    },
-    {
-        image:'/assets/icons/materialUi.svg',
-        name:"Material UI"
-    },
-    {
-        image:'/assets/icons/figma.svg',
-        name:"Figma"
-    },
-    {
-        image:'/assets/icons/illustrator.svg',
-        name:"Illustrator"
-    },
-    {
-        image:'/assets/icons/photoshop.svg',
-        name:"Photoshop"
-    },
-    {
-        image:'/assets/icons/xd.svg',
-        name:"Xd"
-    },
 ]

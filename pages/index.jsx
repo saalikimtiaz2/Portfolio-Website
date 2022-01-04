@@ -39,13 +39,15 @@ export default function Home() {
         </section>
         <section>
           <div className='lg:container lg:mx-auto xs:px-4 md:px-16 lg:px-'>
-            <div className="grid grid-cols-12 xs:gap-0 lg:gap-10">
+            <div className="grid grid-cols-12 xs:gap-0 lg:gap-10 items-center">
               <div className="xs:col-span-12 md:col-span-6 lg:col-span-7">
                 <h1 className="text-32 font-light leading-tight italic">My awesome</h1>
                 <h1 className="text-48 text-primary leading-tight font-bold">services</h1>
                 <p className='max-w-65'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis illo nesciunt exercitationem animi est tempora ut iusto architecto earum explicabo.</p>
                 <PrimaryButton>Download Resume</PrimaryButton>
-                <div className={`${Styles.card} xs:mx-auto md:mx-0 md:ml-auto`}>
+              </div>
+              <div className="xs:col-span-12 md:col-span-6 lg:col-span-5 flex flex-col items-center justify-center">
+                <div className={Styles.card}>
                   <Developer />
                   <h1 className="text-18 font-medium uppercase mt-4"><span className='text-primary'>Frontend</span> Development</h1>
 
@@ -53,19 +55,10 @@ export default function Home() {
                     Lorem ipsum dolor sit amet consectetur.
                   </p>
                 </div>
-              </div>
-              <div className="xs:col-span-12 md:col-span-6 lg:col-span-5 flex flex-col items-center justify-center">
-                <div className={Styles.card}>
+                <div className={`${Styles.card} mt-6`}>
                   <UIUX />
                   <h1 className="text-18 font-medium uppercase mt-4"><span className='text-primary'>UI/UX</span> Development</h1>
 
-                  <p className='text-14 text-gray text-center max-w-25 mt-2'>
-                    Lorem ipsum dolor sit amet consectetur.
-                  </p>
-                </div>
-                <div className={Styles.card}>
-                  <Graphic />
-                  <h1 className="text-18 font-medium uppercase mt-4"><span className='text-primary'>Graphic</span> Designing</h1>
                   <p className='text-14 text-gray text-center max-w-25 mt-2'>
                     Lorem ipsum dolor sit amet consectetur.
                   </p>
@@ -80,7 +73,7 @@ export default function Home() {
             <p className='text-gray mt-2 text-14 mx-auto text-center max-w-65 mb-8'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam earum consequatur vel ipsam.</p>
             <div className="flex items-center flex-wrap justify-center">
               {
-                icons.map((icon) => <div className='m-3 p-6 rounded-md shadow-md h-32 w-32 flex flex-col justify-center items-center trasition duration-500 hover:shadow-lg' key={icon}>
+                icons.map((icon) => <div className='m-8 p-6 rounded-md h-32 w-32 flex flex-col justify-center items-center trasition duration-500 hover:shadow-md' key={icon}>
                   <img src={icon.image} alt='' className='h-16' />
                   <p className='text-gray mt-2 text-14'>{icon.name}</p>
                 </div>)
