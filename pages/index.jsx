@@ -110,14 +110,16 @@ export default function Home() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
               earum consequatur vel ipsam.
             </p>
-            <div className='flex items-center flex-wrap justify-center gap-16'>
+            <div className='flex items-center flex-wrap justify-center xs:gap-10 lg:gap-x-20'>
               {icons.map((icon) => (
                 <div
-                  className=' p-6 rounded-md h-32 w-32 flex flex-col justify-center items-center trasition duration-500 hover:shadow'
+                  className='p-6 gap-4 rounded-md xs:h-28 xs:w-28 lg:h-32 lg:w-32 flex flex-col justify-center items-center trasition duration-500 hover:shadow'
                   key={icon}
                 >
                   <img src={icon.image} alt='' className='h-16' />
-                  <p className='text-gray mt-2 text-14'>{icon.name}</p>
+                  <p className='text-gray xs:text-12 lg:text-14 text-center'>
+                    {icon.name}
+                  </p>
                 </div>
               ))}
             </div>
