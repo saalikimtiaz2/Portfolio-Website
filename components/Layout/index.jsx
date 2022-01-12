@@ -1,12 +1,16 @@
-import Header from '../Navigation/Header'
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
+import Header from '../Navigation/Header';
 
 function Layout({ children }) {
-    return (
-        <>
-            <Header />
-            {children}
-        </>
-    )
+  const { darkMode } = useContext(ThemeContext);
+
+  return (
+    <div className={darkMode ? 'bg-darkBg' : 'bg-white'}>
+      <Header />
+      {children}
+    </div>
+  );
 }
 
-export default Layout
+export default Layout;

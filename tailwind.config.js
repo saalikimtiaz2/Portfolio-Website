@@ -3,11 +3,13 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
-   theme: {
+  theme: {
     colors: {
       primary: '#F9C61C',
       secondary: '#3adede',
       black: '#000000',
+      darkBg: '#141520',
+      darkCard: '#1e1f2c',
       white: '#FFFFFF',
       gray: '#aaaaaa',
     },
@@ -80,4 +82,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
