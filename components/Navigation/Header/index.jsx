@@ -31,8 +31,22 @@ function Header() {
             <Logo height='52px' fill='#f9c519' />
           </Link>
         </div>
-        <div className='col-span-6 justify-end'>
-          <button onClick={toggleMode}>{darkMode ? 'Light' : 'Dark'}</button>
+        <div className='col-span-6 flex justify-end'>
+          <button
+            onClick={toggleMode}
+            className={`flex items-center gap-2 text-12 ${
+              darkMode ? 'text-white' : 'text-black'
+            }`}
+          >
+            {darkMode ? 'Light Mode' : 'Dark Mode'}
+            <img
+              src={
+                darkMode ? '/assets/icons/light.svg' : '/assets/icons/dark.svg'
+              }
+              alt=''
+              className='theme-icon'
+            />
+          </button>
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ export default function Home() {
                     Imtiaz
                   </span>
                 </h1>
-                <p className={`${darkMode ? 'text-white' : 'text-black'} mb-4`}>
+                <p className='text-gray text-14 mx-auto mb-8'>
                   Experienced Frontend Engineer with a demonstrated history of
                   working in the software development industry.
                 </p>
@@ -89,11 +89,7 @@ export default function Home() {
                 <h1 className='text-48 text-primary leading-tight font-bold'>
                   Services
                 </h1>
-                <p
-                  className={`${
-                    darkMode ? 'text-white' : 'text-black'
-                  } max-w-65`}
-                >
+                <p className='text-gray text-14 mb-8'>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Omnis illo nesciunt exercitationem animi est tempora ut iusto
                   architecto earum explicabo.
