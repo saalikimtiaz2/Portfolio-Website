@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 // context states
 export const ThemeContext = createContext({
-  darkMode: false,
+  darkMode: true,
   toggleMode: () => {},
 });
 
 // context provider
 function ThemeContextProvider({ children }) {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(true);
 
   const handleToggleDarkMode = () => {
     setDarkTheme(!darkTheme);

@@ -5,13 +5,13 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: '#F9C61C',
+      primary: '#3AAFC9',
       secondary: '#3adede',
       black: '#000000',
-      darkBg: '#141520',
+      darkBg: '#2F3A4A',
       darkCard: '#1e1f2c',
       white: '#FFFFFF',
-      gray: '#aaaaaa',
+      gray: '#C3CADC',
     },
     screens: {
       xs: '250px',
@@ -58,7 +58,6 @@ module.exports = {
       15: '15ch',
       20: '20ch',
       25: '25ch',
-      28: '28ch',
       35: '35ch',
       40: '40ch',
       45: '45ch',

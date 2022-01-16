@@ -6,7 +6,7 @@ function Layout({ children }) {
   const { darkMode } = useContext(ThemeContext);
 
   return (
-    <div className={darkMode ? 'bg-darkBg' : 'bg-white'}>
+    <div className={`h-screen ${darkMode ? 'bg-darkBg' : 'bg-white'}`}>
       <Header />
       {children}
     </div>

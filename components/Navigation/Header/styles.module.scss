@@ -1,0 +1,18 @@
+@import '../../../styles/colors';
+
+.navList {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  li {
+    font-size: 24px;
+    margin-right: 30px;
+    cursor: pointer;
+    span {
+      color: $primary;
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
