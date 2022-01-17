@@ -10,6 +10,10 @@
   font-family: 'Lexend', sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
 }

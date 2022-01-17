@@ -9,9 +9,11 @@ module.exports = {
       secondary: '#3adede',
       black: '#000000',
       darkBg: '#2F3A4A',
-      darkCard: '#1e1f2c',
+      darkCard: '#1F2632',
       white: '#FFFFFF',
       gray: '#C3CADC',
+      darkGray: '#464D57',
+      grayBg: '#f2fdff',
     },
     screens: {
       xs: '250px',
@@ -55,6 +57,7 @@ module.exports = {
       82: '82px',
     },
     maxWidth: {
+      10: '10ch',
       15: '15ch',
       20: '20ch',
       25: '25ch',
@@ -72,7 +75,11 @@ module.exports = {
       '4/4': '85%',
       full: '100%',
     },
-    extend: {},
+    extend: {
+      rotate: {
+        10: '10deg',
+      },
+    },
   },
   variants: {
     extend: {

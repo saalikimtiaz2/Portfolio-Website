@@ -7,11 +7,31 @@
   max-width: 6ch;
   display: flex;
   align-items: flex-end;
+  margin-left: 6rem;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
   img {
     margin-left: 10px;
   }
   @media screen and (max-width: 768px) {
-    font-size: 50px;
+    font-size: 58px;
+    margin-left: 0;
+  }
+}
+
+.heroImage {
+  max-height: 650px;
+  position: absolute;
+  right: 0;
+  bottom: -20%;
+  z-index: 0;
+  @media screen and (max-width: 768px) {
+    max-height: 350px;
+    margin-right: 0;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -23,16 +43,12 @@
 }
 
 .stylishHeading {
-  font-size: 150px;
+  font-size: 120px;
   font-family: 'Yellowtail', cursive;
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -40%) rotate(-45deg);
-  z-index: -5;
-  opacity: 0.01;
+  text-align: center;
   @media screen and (max-width: 768px) {
-    display: none;
+    font-size: 80px;
+    margin-bottom: 2rem;
   }
 }
 
