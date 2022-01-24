@@ -10,6 +10,7 @@ import {
   Instagram,
   Twitter,
 } from '../components/SvgIcons';
+import { icons } from '../models';
 import Styles from '../styles/home.module.scss';
 
 function Home() {
@@ -136,6 +137,28 @@ function Home() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quae
               nemo saepe quas modi excepturi autem.
             </p>
+          </div>
+          <div className='lg:container lg:mx-auto flex items-center flex-wrap justify-center xs:gap-10 lg:gap-x-20 mt-20'>
+            {icons.map((icon) => (
+              <div
+                className={`${
+                  darkMode
+                    ? 'hover:bg-darkCard hover:shadow-xl'
+                    : 'hover:shadow-md'
+                } p-6 gap-4 rounded-md xs:h-28 xs:w-28
+                   lg:h-32 lg:w-32 flex flex-col justify-center items-center trasition duration-700 `}
+                key={icon.name}
+              >
+                {darkMode ? (
+                  <img src={icon.darkImage} alt='' className='h-16' />
+                ) : (
+                  <img src={icon.image} alt='' className='h-16' />
+                )}
+                <p className='text-gray xs:text-12 lg:text-14 text-center'>
+                  {icon.name}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
       </Layout>
