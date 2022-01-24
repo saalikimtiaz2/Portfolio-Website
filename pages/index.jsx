@@ -163,8 +163,8 @@ function Home() {
             ))}
           </div>
           <div className='lg:container lg:mx-auto'>
-            <div className='grid grid-cols-12 mt-20 xs:gap-4 lg:gap-10'>
-              <div className='xs:col-span-12 lg:col-span-5'>
+            <div className='grid grid-cols-12 mt-20 xs:gap-4 lg:gap-10 items-center'>
+              <div className='xs:col-span-12 lg:col-span-5 p-4'>
                 <h2
                   className={`${
                     Styles.stylishHeading
@@ -174,29 +174,33 @@ function Home() {
                 >
                   Services.
                 </h2>
-                <p className='max-w-55 text-gray mt-6'>
+                <p className='max-w-55 text-gray mt-6 xs:text-center lg:text-left'>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
                   quae nemo saepe quas modi excepturi autem.
                 </p>
               </div>
-              <div className='xs:col-span-12 lg:col-span-7 flex items-center gap-6 justify-end'>
+              <div className='xs:col-span-12 lg:col-span-7 flex flex-wrap items-center gap-6 xs:justify-center lg:justify-end'>
                 <div
-                  className={`${Styles.card} ${
-                    darkMode ? 'bg-darkBg' : 'bg-grayBg'
+                  className={`${Styles.card} shadow-md hover:shadow-xl ${
+                    darkMode ? 'bg-darkBg' : 'bg-white'
                   }`}
                 >
-                  <UIUX />
-                  <h2 className='max-w-10 mt-8'>UI/UX Designing</h2>
-                  <p className='text-gray text-14 mt-8'>110+ Projects</p>
+                  <div>
+                    <UIUX />
+                    <h2 className='max-w-10 mt-8'>UI/UX Designing</h2>
+                    <p className='text-gray text-14 mt-8'>110+ Projects</p>
+                  </div>
                 </div>
                 <div
-                  className={`${Styles.card} ${
-                    darkMode ? 'bg-darkBg' : 'bg-grayBg'
+                  className={`${Styles.card} shadow-md hover:shadow-xl ${
+                    darkMode ? 'bg-darkBg' : 'bg-white'
                   }`}
                 >
-                  <Developer />
-                  <h2 className='max-w-10 mt-8'>Frontend Developement</h2>
-                  <p className='text-gray text-14 mt-8'>110+ Projects</p>
+                  <div>
+                    <Developer />
+                    <h2 className='max-w-10 mt-8'>Frontend Developement</h2>
+                    <p className='text-gray text-14 mt-8'>110+ Projects</p>
+                  </div>
                 </div>
               </div>
             </div>
