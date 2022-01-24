@@ -9,6 +9,8 @@ import {
   Facebook,
   Instagram,
   Twitter,
+  UIUX,
+  Developer,
 } from '../components/SvgIcons';
 import { icons } from '../models';
 import Styles from '../styles/home.module.scss';
@@ -95,7 +97,7 @@ function Home() {
             <div className='grid grid-cols-12 xs:gap-y-20 lg:gap-6 mb-10'>
               <div className='xs:col-span-12 lg:col-span-6 relative'>
                 <h2
-                  className={`${Styles.stylishHeading} -rotate-10 ${
+                  className={`${Styles.stylishHeading} -rotate-10 text-center ${
                     darkMode ? 'text-darkGray' : 'text-gray'
                   }`}
                 >
@@ -127,7 +129,7 @@ function Home() {
               </div>
             </div>
             <h2
-              className={`${Styles.stylishHeading} rotate-0 ${
+              className={`${Styles.stylishHeading} text-center ${
                 darkMode ? 'text-darkGray' : 'text-gray'
               }`}
             >
@@ -159,6 +161,45 @@ function Home() {
                 </p>
               </div>
             ))}
+          </div>
+          <div className='lg:container lg:mx-auto'>
+            <div className='grid grid-cols-12 mt-20 xs:gap-4 lg:gap-10'>
+              <div className='xs:col-span-12 lg:col-span-5'>
+                <h2
+                  className={`${
+                    Styles.stylishHeading
+                  } -rotate-10 text-center  ${
+                    darkMode ? 'text-darkGray' : 'text-gray'
+                  }`}
+                >
+                  Services.
+                </h2>
+                <p className='max-w-55 text-gray mt-6'>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+                  quae nemo saepe quas modi excepturi autem.
+                </p>
+              </div>
+              <div className='xs:col-span-12 lg:col-span-7 flex items-center gap-6 justify-end'>
+                <div
+                  className={`${Styles.card} ${
+                    darkMode ? 'bg-darkBg' : 'bg-grayBg'
+                  }`}
+                >
+                  <UIUX />
+                  <h2 className='max-w-10 mt-8'>UI/UX Designing</h2>
+                  <p className='text-gray text-14 mt-8'>110+ Projects</p>
+                </div>
+                <div
+                  className={`${Styles.card} ${
+                    darkMode ? 'bg-darkBg' : 'bg-grayBg'
+                  }`}
+                >
+                  <Developer />
+                  <h2 className='max-w-10 mt-8'>Frontend Developement</h2>
+                  <p className='text-gray text-14 mt-8'>110+ Projects</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </Layout>

@@ -45,7 +45,6 @@
 .stylishHeading {
   font-size: 120px;
   font-family: 'Yellowtail', cursive;
-  text-align: center;
   @media screen and (max-width: 768px) {
     font-size: 80px;
     margin-bottom: 2rem;
@@ -56,11 +55,9 @@
   width: 280px;
   margin-top: 1.5em;
   padding: 2em 1.5em;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
+  padding-top: 6rem;
   transition: all 1s ease-in-out;
+  &:hover {
+    background-color: $primary;
+  }
 }
