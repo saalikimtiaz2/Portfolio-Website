@@ -46,7 +46,7 @@
   font-size: 120px;
   font-family: 'Yellowtail', cursive;
   @media screen and (max-width: 768px) {
-    font-size: 80px;
+    font-size: 70px;
     margin-bottom: 2rem;
   }
 }
@@ -56,11 +56,14 @@
   align-items: flex-end;
   flex-wrap: wrap;
   min-width: 280px;
-  min-height: 400px;
+  min-height: 350px;
   margin-top: 1.5em;
   padding: 1.5em;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   &:hover {
-    background-color: $primary;
+    background-color: $secondary;
+  }
+  @media screen and (max-width: 768px) {
+    min-height: 300px;
   }
 }

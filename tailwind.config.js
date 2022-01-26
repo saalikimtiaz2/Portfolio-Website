@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     colors: {
       primary: '#3AAFC9',
-      secondary: '#3adede',
+      secondary: '#676CDB',
       black: '#000000',
       darkBg: '#2F3A4A',
       darkCard: '#1F2632',
@@ -61,6 +61,7 @@ module.exports = {
       15: '15ch',
       20: '20ch',
       25: '25ch',
+      30: '30ch',
       35: '35ch',
       40: '40ch',
       45: '45ch',

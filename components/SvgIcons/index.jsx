@@ -137,15 +137,14 @@ export function Logo({ height }) {
   );
 }
 
-export function Developer() {
-  const { darkMode } = useContext(ThemeContext);
+export function Developer({ isHover }) {
   return (
     <svg
       version='1.1'
       xmlns='http://www.w3.org/2000/svg'
-      height='54px'
+      height='28px'
       viewBox='0 0 140 70'
-      fill={darkMode ? '#3AAFC9' : 'black'}
+      fill={isHover ? 'white' : '#676CDB'}
     >
       <path
         d='M75.3,0H19.6h-9.4C4.6,0,0,4.6,0,10.2v44.7c0,5.7,4.6,10.2,10.2,10.2h9.4h55.6h9.4c5.7,0,10.2-4.6,10.2-10.2
@@ -159,15 +158,14 @@ export function Developer() {
   );
 }
 
-export function UIUX() {
-  const { darkMode } = useContext(ThemeContext);
+export function UIUX({ isHover }) {
   return (
     <svg
       version='1.1'
       xmlns='http://www.w3.org/2000/svg'
-      height='54px'
+      height='28px'
       viewBox='0 0 87 70'
-      fill={darkMode ? '#3AAFC9' : 'black'}
+      fill={isHover ? 'white' : '#676CDB'}
     >
       <path
         d='M71.9,0.7H15.4c-8.3,0-15,6.7-15,15v38.6c0,8.3,6.7,15,15,15h56.5c8.3,0,15-6.7,15-15V31v-7v-8.3
