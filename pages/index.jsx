@@ -132,10 +132,18 @@ function Home() {
                   sit amet consectetur adipisicing elit. Esse quae nemo saepe
                   quas modi excepturi autem?
                 </p>
+                <button className='text-24 text-primary flex items-center gap-4 mt-4'>
+                  Download Resume
+                  <img
+                    src='/assets/icons/right-arrow.svg'
+                    alt=''
+                    className='h-3 rotate-90'
+                  />
+                </button>
               </div>
             </div>
             <h2
-              className={`${Styles.stylishHeading} text-center ${
+              className={`${Styles.stylishHeading} text-center mt-20 ${
                 darkMode ? 'text-darkGray' : 'text-gray'
               }`}
             >
