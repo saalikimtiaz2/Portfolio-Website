@@ -144,6 +144,7 @@ export function Developer({ isHover }) {
       xmlns='http://www.w3.org/2000/svg'
       height='28px'
       viewBox='0 0 140 70'
+      id='cardIcon'
       fill={isHover ? 'white' : '#676CDB'}
     >
       <path
@@ -165,6 +166,7 @@ export function UIUX({ isHover }) {
       xmlns='http://www.w3.org/2000/svg'
       height='28px'
       viewBox='0 0 87 70'
+      id='cardIcon'
       fill={isHover ? 'white' : '#676CDB'}
     >
       <path
