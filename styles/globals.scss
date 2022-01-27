@@ -45,6 +45,26 @@ h3 {
   text-transform: uppercase;
 }
 
+.btn {
+  img {
+    transition: all 1s ease-in-out;
+  }
+}
+.btn-right {
+  &:hover {
+    img {
+      transform: translateX(10px);
+    }
+  }
+}
+.btn-down {
+  &:hover {
+    img {
+      transform: translateY(10px) rotate(90deg);
+    }
+  }
+}
+
 #cardIcon {
   transition: all 0.5s ease-in-out;
 }
