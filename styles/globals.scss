@@ -45,22 +45,23 @@ h3 {
   text-transform: uppercase;
 }
 
-.btn {
-  img {
-    transition: all 1s ease-in-out;
-  }
-}
 .btn-right {
   &:hover {
     img {
-      transform: translateX(10px);
+      animation-duration: 0.5s;
+      animation-name: btnRightAnimation;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
     }
   }
 }
 .btn-down {
   &:hover {
     img {
-      transform: translateY(10px) rotate(90deg);
+      animation-duration: 0.5s;
+      animation-name: btnDownAnimation;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
     }
   }
 }
@@ -120,4 +121,26 @@ h3 {
 .theme-icon {
   width: 20px;
   height: 20px;
+}
+
+// animations
+
+@keyframes btnRightAnimation {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes btnDownAnimation {
+  from {
+    transform: translateY(0) rotate(90deg);
+  }
+
+  to {
+    transform: translateY(10px) rotate(90deg);
+  }
 }

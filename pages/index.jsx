@@ -132,7 +132,7 @@ function Home() {
                   sit amet consectetur adipisicing elit. Esse quae nemo saepe
                   quas modi excepturi autem?
                 </p>
-                <button className='text-24 text-primary flex items-center gap-4 mt-4 btn btn-down'>
+                <button className='text-24 text-primary flex items-center gap-4 mt-4 btn~ btn-down'>
                   Download Resume
                   <img
                     src='/assets/icons/right-arrow.svg'
