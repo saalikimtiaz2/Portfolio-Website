@@ -13,7 +13,6 @@ import {
   Developer,
 } from '../components/SvgIcons';
 import Contact from '../containers/Contact';
-
 import { icons } from '../models';
 import Styles from '../styles/home.module.scss';
 import 'react-toastify/dist/ReactToastify.css';
@@ -32,7 +31,9 @@ function Home() {
   // Ref's Function
   const handleContactScroll = () => {
     if (contactRef && contactRef.current) {
-      contactRef.current.scrollIntoView({ behavior: 'smooth' });
+      contactRef.current.scrollIntoView({
+        behavior: 'smooth',
+      });
     }
   };
 

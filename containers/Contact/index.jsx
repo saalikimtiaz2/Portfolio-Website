@@ -16,9 +16,26 @@ function Contact() {
     reset,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     console.log(data);
-    toast.success('Message Sent!', { theme: darkMode ? 'dark' : 'light' });
+    const resolveLater = new Promise((resolve) => setTimeout(resolve, 2000));
+    toast.promise(
+      resolveLater,
+      {
+        pending: 'Sending...',
+        success:
+          ('Message Sent!',
+          {
+            icon: ({ theme, type }) => (
+              <img src='/assets/icons/msg.svg' alt='' />
+            ),
+          }),
+        error: 'Message not Sent!',
+      },
+      { theme: darkMode ? 'dark' : 'light' }
+    );
+
     reset();
   };
   return (
