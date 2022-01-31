@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useContext, useState, useEffect } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import Header from '../Navigation/Header';
 import Footer from '../Navigation/Footer';
@@ -6,6 +7,24 @@ import Footer from '../Navigation/Footer';
 function Layout({ children }) {
   const { darkMode } = useContext(ThemeContext);
 
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    });
+  }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <div
       className={`min-h-screen w-screen ${
@@ -14,6 +33,15 @@ function Layout({ children }) {
     >
       <Header />
       {children}
+      {showButton && (
+        <button
+          className='backToTop shadow-lg hover:shadow-xl'
+          onClick={handleScrollToTop}
+        >
+          <img src='/assets/icons/btt.svg' className='h-12' alt='' />
+          <span>Back to Top</span>
+        </button>
+      )}
       <Footer />
     </div>
   );

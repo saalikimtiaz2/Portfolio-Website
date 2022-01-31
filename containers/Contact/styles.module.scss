@@ -1,0 +1,22 @@
+.contactTitle {
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 90%;
+  max-width: 6ch;
+  position: relative;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+  img {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 58px;
+    margin-left: 0;
+    img {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+  }
+}
