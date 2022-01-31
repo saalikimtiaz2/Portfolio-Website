@@ -12,7 +12,8 @@ function Footer() {
     >
       <Logo height='64px' />
       <p className='text-center text-14 font-light text-gray'>
-        Copyrights 2022 SALIK IMTIAZ All Rights Reserved.{' '}
+        Copyrights &copy; {new Date().getFullYear()} Salik Imtiaz All Rights
+        Reserved.
       </p>
     </div>
   );

@@ -13,7 +13,7 @@ module.exports = {
       white: '#FFFFFF',
       gray: '#C3CADC',
       darkGray: '#464D57',
-      grayBg: '#f2fdff',
+      grayBg: '#efefef',
     },
     screens: {
       xs: '250px',
