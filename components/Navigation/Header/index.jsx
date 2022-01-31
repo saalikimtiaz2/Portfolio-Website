@@ -22,7 +22,7 @@ function Header() {
   }, []);
   return (
     <div
-      className={`fixed xs:px-6 lg:px-20 py-2 z-50 w-screen ${
+      className={`fixed xs:px-6 lg:px-20 py-3 z-50 w-screen ${
         navbar ? `shadow-xl ${darkMode ? 'bg-darkCard' : 'bg-white'}` : ''
       }`}
     >

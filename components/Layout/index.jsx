@@ -35,7 +35,7 @@ function Layout({ children }) {
       {children}
       {showButton && (
         <button
-          className='backToTop shadow-lg hover:shadow-xl'
+          className='backToTop shadow-lg hover:shadow-xl bg-opacity-50'
           onClick={handleScrollToTop}
         >
           <img src='/assets/icons/btt.svg' className='h-12' alt='' />

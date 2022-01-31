@@ -32,7 +32,7 @@ function Contact() {
               className='xs:h-10 lg:h-20'
             />
           </h2>
-          <p className='max-w-40 mt-8 text-14 text-gray'>
+          <p className='max-w-45 mt-8 text-14 text-gray'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quae
             nemo saepe quas modi excepturi autem.
           </p>
