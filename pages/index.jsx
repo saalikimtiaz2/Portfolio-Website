@@ -14,7 +14,9 @@ import {
 } from '../components/SvgIcons';
 import { icons } from '../models';
 import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
 import Styles from '../styles/home.module.scss';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Home() {
   // context for theme
@@ -28,9 +30,14 @@ function Home() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    toast.success('Message Sent!', { theme: darkMode ? 'dark' : 'light' });
+    reset();
+  };
 
   // Ref's
   const contactRef = useRef();
@@ -137,7 +144,7 @@ function Home() {
                     <h2 className='text-20 max-w-15'>Years of experience.</h2>
                   </div>
                   <div>
-                    <h2 className='text-40 text-primary mb-2'>3+</h2>
+                    <h2 className='text-40 text-primary mb-2'>30+</h2>
                     <h2 className='text-20 max-w-10'>Satisfied clients.</h2>
                   </div>
                 </div>
@@ -349,6 +356,7 @@ function Home() {
                     <input
                       placeholder='Jhon Doe'
                       {...register('fullName', { required: true })}
+                      style={{ color: darkMode ? 'white' : 'black' }}
                     />
                     {errors.fullName && (
                       <span className='error'> Please Enter your Name</span>
@@ -362,6 +370,7 @@ function Home() {
                       placeholder='abc@example.com'
                       type='email'
                       {...register('email', { required: true })}
+                      style={{ color: darkMode ? 'white' : 'black' }}
                     />
                     {errors.email && (
                       <span className='error'>
@@ -378,6 +387,7 @@ function Home() {
                       rows={2}
                       placeholder='Project Detail'
                       {...register('detail')}
+                      style={{ color: darkMode ? 'white' : 'black' }}
                     />
                   </label>
 
@@ -392,6 +402,7 @@ function Home() {
                       className='h-4'
                     />
                   </button>
+                  <ToastContainer />
                 </form>
               </div>
             </div>
