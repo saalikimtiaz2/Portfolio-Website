@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import { useForm } from 'react-hook-form';
@@ -29,7 +30,7 @@ function Contact() {
             <img
               src='/assets/icons/right-arrow.svg'
               alt=''
-              className='xs:h-10 lg:h-20'
+              className='headingIcon'
             />
           </h2>
           <p className='max-w-45 mt-8 text-14 text-gray'>
