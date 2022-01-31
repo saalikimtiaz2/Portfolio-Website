@@ -98,7 +98,7 @@ export function Logo({ height }) {
       xmlns='http://www.w3.org/2000/svg'
       height={height}
       fill={darkMode ? '#c3cadc' : '#2F3A4A'}
-      viewBox='0 0 1728 1296'
+      viewBox='0 0 1200 1296'
     >
       <g>
         <path
@@ -117,21 +117,11 @@ export function Logo({ height }) {
           <rect x='799.8' y='376.4' width='65.8' height='65.8' />
           <rect x='799.8' y='467.7' width='65.8' height='396.4' />
         </g>
-        <g>
-          <rect x='1534.2' y='376.4' width='65.8' height='65.8' />
-          <rect x='1534.2' y='467.7' width='65.8' height='396.4' />
-        </g>
         <polygon
           points='1186.2,376.4 1118.1,376.4 1017.9,577.3 1002.8,577.3 1002.8,376.4 937.4,376.4 937.4,577.3 
 		881.1,577.3 881.1,652.1 937.4,652.1 937.4,864.1 1002.8,864.1 1002.8,652.1 1020.2,652.1 1115.7,864.1 1186.2,864.1 1070,608.2 	
 		'
         />
-        <g>
-          <path
-            className='logo-divider'
-            d='M1229.5,939.9l161.7-639.4h55.5L1285,939.9H1229.5z'
-          />
-        </g>
       </g>
     </svg>
   );

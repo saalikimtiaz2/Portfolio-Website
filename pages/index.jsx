@@ -11,17 +11,26 @@ import {
   Twitter,
   UIUX,
   Developer,
-  WhiteDeveloper,
-  WhiteUIUX,
 } from '../components/SvgIcons';
 import { icons } from '../models';
+import { useForm } from 'react-hook-form';
 import Styles from '../styles/home.module.scss';
 
 function Home() {
+  // context for theme
   const { darkMode } = useContext(ThemeContext);
 
+  // states
   const [hoverUIUX, setHoverUIUX] = useState(false);
   const [hoverDeveloper, setHoverDeveloper] = useState(false);
+
+  // React-Hook_Form
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
 
   return (
     <>
@@ -287,6 +296,87 @@ function Home() {
                 <h2 className='text-primary xs:text-32 lg:text-48'>02.</h2>
                 <h2 className='xs:text-20 lg:text-24'>Cambokicks</h2>
                 <h3 className='xs:text-12 lg:text-16'>AUG 2K21</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          className={`lg:py-32 ${darkMode ? 'bg-darkCard' : 'bg-grayBg'}`}
+        >
+          <div className='xs:px-4 lg:px-0 lg:container lg:mx-auto'>
+            <div className='grid grid-cols-12 xs:gap-4 lg:gap-10 items-center'>
+              <div className='xs:col-span-12 lg:col-span-6'>
+                <h2 className={Styles.contactTitle}>
+                  Let&apos;s Connect
+                  <img
+                    src='/assets/icons/right-arrow.svg'
+                    alt=''
+                    className='xs:h-10 lg:h-20'
+                  />
+                </h2>
+                <p className='max-w-40 mt-8 text-14 text-gray'>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+                  quae nemo saepe quas modi excepturi autem.
+                </p>
+                <h2
+                  className={`${Styles.stylishHeading} -rotate-10 text-center ${
+                    darkMode ? 'text-darkGray' : 'text-gray'
+                  }`}
+                >
+                  Inquiries.
+                </h2>
+              </div>
+              <div className='xs:col-span-12 lg:col-span-6'>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <label htmlFor='fullName'>
+                    Your Name
+                    <input
+                      placeholder='Jhon Doe'
+                      {...register('fullName', { required: true })}
+                    />
+                    {errors.fullName && (
+                      <span className='error'> Please Enter your Name</span>
+                    )}
+                    <span className='space' />
+                  </label>
+
+                  <label htmlFor='email'>
+                    Your Email Address
+                    <input
+                      placeholder='abc@example.com'
+                      type='email'
+                      {...register('email', { required: true })}
+                    />
+                    {errors.email && (
+                      <span className='error'>
+                        {' '}
+                        Pleae Enter your Email Address
+                      </span>
+                    )}
+                    <span className='space' />
+                  </label>
+
+                  <label htmlFor='detail'>
+                    Tell Me About Your Project
+                    <textarea
+                      rows={2}
+                      placeholder='Project Detail'
+                      {...register('detail')}
+                    />
+                  </label>
+
+                  <button
+                    type='submit'
+                    className='text-24 text-primary flex items-center gap-4 mt-4 btn btn-right'
+                  >
+                    Send
+                    <img
+                      src='/assets/icons/right-arrow.svg'
+                      alt=''
+                      className='h-4'
+                    />
+                  </button>
+                </form>
               </div>
             </div>
           </div>

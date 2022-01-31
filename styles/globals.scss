@@ -45,6 +45,39 @@ h3 {
   text-transform: uppercase;
 }
 
+label {
+  margin-top: 2em;
+}
+
+input,
+textarea {
+  background: transparent;
+  color: white;
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid $gray;
+  padding: 0.5em 1em;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+  &:hover {
+    border-bottom: 2px solid $darkGray;
+    outline: none;
+  }
+  &:focus {
+    border-bottom: 2px solid $primary;
+    outline: none;
+  }
+  &::placeholder {
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+.space {
+  display: block;
+  height: 2.5em;
+}
+
 .btn-right {
   &:hover {
     img {
@@ -121,6 +154,13 @@ h3 {
 .theme-icon {
   width: 20px;
   height: 20px;
+}
+
+.error {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  color: #ee002c;
 }
 
 // animations
