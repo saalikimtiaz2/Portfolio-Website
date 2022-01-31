@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import Head from 'next/head';
@@ -31,6 +31,16 @@ function Home() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
+
+  // Ref's
+  const contactRef = useRef();
+
+  // Ref's Function
+  const handleContactScroll = () => {
+    if (contactRef && contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -68,7 +78,10 @@ function Home() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Esse quae nemo saepe quas modi excepturi autem?
                   </p>
-                  <button className='text-24 text-primary flex items-center gap-4 mt-4 btn btn-right'>
+                  <button
+                    onClick={handleContactScroll}
+                    className='text-24 text-primary flex items-center gap-4 mt-4 btn btn-right'
+                  >
                     Hire Me
                     <img
                       src='/assets/icons/right-arrow.svg'
@@ -141,14 +154,16 @@ function Home() {
                   sit amet consectetur adipisicing elit. Esse quae nemo saepe
                   quas modi excepturi autem?
                 </p>
-                <button className='text-24 text-primary flex items-center gap-4 mt-4 btn~ btn-down'>
-                  Download Resume
-                  <img
-                    src='/assets/icons/right-arrow.svg'
-                    alt=''
-                    className='h-3 rotate-90'
-                  />
-                </button>
+                <a href='/assets/Salik-Resume.pdf' download>
+                  <button className='text-24 text-primary flex items-center gap-4 mt-4 btn~ btn-down'>
+                    Download Resume
+                    <img
+                      src='/assets/icons/right-arrow.svg'
+                      alt=''
+                      className='h-3 rotate-90'
+                    />
+                  </button>
+                </a>
               </div>
             </div>
             <h2
@@ -302,6 +317,7 @@ function Home() {
         </section>
         <section
           className={`lg:py-32 ${darkMode ? 'bg-darkCard' : 'bg-grayBg'}`}
+          ref={contactRef}
         >
           <div className='xs:px-4 lg:px-0 lg:container lg:mx-auto'>
             <div className='grid grid-cols-12 xs:gap-4 lg:gap-10 items-center'>

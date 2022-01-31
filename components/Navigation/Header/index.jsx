@@ -29,7 +29,7 @@ function Header() {
       <div className='grid grid-cols-12 items-center'>
         <div className='col-span-6'>
           <Link href='/' className={`${navbar ? 'xs:mx-auto' : ''}`}>
-            <Logo height='64px' />
+            <Logo height='44px' />
           </Link>
         </div>
 

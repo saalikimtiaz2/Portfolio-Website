@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import Header from '../Navigation/Header';
+import Footer from '../Navigation/Footer';
 
 function Layout({ children }) {
   const { darkMode } = useContext(ThemeContext);
@@ -13,6 +14,7 @@ function Layout({ children }) {
     >
       <Header />
       {children}
+      <Footer />
     </div>
   );
 }

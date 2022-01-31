@@ -97,8 +97,8 @@ export function Logo({ height }) {
       id='Layer_1'
       xmlns='http://www.w3.org/2000/svg'
       height={height}
-      fill={darkMode ? '#c3cadc' : '#2F3A4A'}
-      viewBox='0 0 1200 1296'
+      fill={darkMode ? 'white' : '#2F3A4A'}
+      viewBox='0 100 1200 1000'
     >
       <g>
         <path
