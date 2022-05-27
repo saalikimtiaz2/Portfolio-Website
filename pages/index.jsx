@@ -38,7 +38,7 @@ function Home() {
   };
 
   return (
-    <>
+    <div style={{opacity:0}}>
       <Head>
         <title>Salik Imtiaz | Frotend Engineer (React)</title>
         <link rel='icon' href='/favicon.ico' />
@@ -313,7 +313,7 @@ function Home() {
           <Contact />
         </section>
       </Layout>
-    </>
+    </div>
   );
 }
 
