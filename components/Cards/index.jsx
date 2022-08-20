@@ -29,7 +29,7 @@ function Card({ project }) {
         className={`${Styles.overlay2} bg-opacity-40 absolute overflow-hidden rounded-xl top-0 left-0 right-0 bottom-0 p-4 flex flex-col justify-end transition-all duration-500 ease-in-out `}
       >
         <img src={project.logo} alt="logo" className="w-14 mb-4" />
-        <div className=" whitespace-nowrap">{project.title}</div>
+        <div className=" whitespace-nowrap text-white">{project.title}</div>
         <p className="text-white text-[12px] font-light">{project.subtitle}</p>
       </div>
 
@@ -38,7 +38,7 @@ function Card({ project }) {
         className={`${Styles.overlay} bg-opacity-40 absolute rounded-xl top-1 left-1 right-1 bottom-1 text-center flex flex-col justify-center items-center p-4 backdrop-blur-md transition-all duration-500 ease-in-out `}
       >
         <h3 className="text-white mb-2 font-medium">{project.title}</h3>
-        <p className="text-grey font-light text-[14px]">
+        <p className="text-white font-light text-[14px]">
           {project.description}
         </p>
         <div className="flex items-center gap-1 flex-wrap justify-center pt-4">
