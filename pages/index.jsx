@@ -15,6 +15,7 @@ import {
 } from "../components/SvgIcons";
 import Contact from "../containers/Contact";
 import { icons } from "../models";
+import Projects from "../models/projects";
 import Styles from "../styles/home.module.scss";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -48,7 +49,7 @@ function Home() {
         <section id="home">
           <div className="xs:px-4 lg:px-20 pt-4 ">
             <div className="grid grid-cols-12 xs:gap-y-10 lg:gap-10 ">
-              <div className="xs:col-span-12 lg:col-span-8 relative lg:pt-72">
+              <div className="xs:col-span-12 lg:col-span-8 relative flex xs:flex-col lg:flex-row lg:items-end">
                 <img
                   src="/assets/hero.svg"
                   alt=""
@@ -67,12 +68,15 @@ function Home() {
                 <div>
                   <h3>/ This is me</h3>
                   <h2 className="max-w-20">
-                    Experienced frontend developer remotly from Islamabad,
+                    Experienced frontend engineer remotly from Islamabad,
                     Pakistan.
                   </h2>
-                  <p className="max-w-35 mt-8 text-14 text-gray">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Esse quae nemo saepe quas modi excepturi autem?
+                  <p className="max-w-35 mt-8 text-16 text-gray">
+                    Proficient in various platforms, languages, and design
+                    systems. Experienced with the latest cutting-edge
+                    development tools and procedures. Able to effectively
+                    self-manage during independent projects, as well as
+                    collaborate as part of a productive team.
                   </p>
                   <button
                     onClick={handleContactScroll}
@@ -116,9 +120,9 @@ function Home() {
             </div>
           </div>
         </section>
-        <section className={darkMode ? "bg-darkCard" : "bg-grayBg"}>
+        <section className={`pb-24 ${darkMode ? "bg-darkCard" : "bg-grayBg"}`}>
           <div
-            className="xs:px-4 lg:px-0 lg:container lg:mx-auto pt-4 "
+            className="xs:px-4 lg:px-0 lg:container lg:mx-auto pt-24"
             id="about"
           >
             <div className="grid grid-cols-12 xs:gap-y-20 lg:gap-6 mb-10">
@@ -144,10 +148,10 @@ function Home() {
               <div className="xs:col-span-12 lg:col-span-6">
                 <h3>/ problem solver</h3>
                 <h2 className="max-w-45">
-                  Experienced frontend developer remotly from Islamabad,
-                  Pakistan.
+                  Experienced Front-end Engineer adept in bringing forth
+                  expertise in web systems.
                 </h2>
-                <p className="max-w-55 mt-8">
+                <p className="max-w-55 mt-8 ">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
                   quae nemo saepe quas modi excepturi autem? Lorem ipsum dolor
                   sit amet consectetur adipisicing elit. Esse quae nemo saepe
@@ -166,7 +170,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div id="techStack">
+          <div id="techStack" className="py-16">
             <h2
               className={`stylishHeading text-center mt-20 ${
                 darkMode ? "text-darkGray" : "text-gray"
@@ -288,8 +292,15 @@ function Home() {
                 </h2>
               </div>
             </div>
-            <div className="flex items-center flex-warp gap-4 xs:mt-10 lg:mt-32 mb-6">
-              <Card />
+            <div className="grid grid-cols-12 gap-4 xs:mt-10 lg:mt-32 mb-6">
+              {Projects.map((project) => (
+                <div
+                  key={project.name}
+                  className="xs:col-span-12 sm:col-span-4 md:col-span-3 lg:col-span-2"
+                >
+                  <Card project={project} />{" "}
+                </div>
+              ))}
             </div>
           </div>
         </section>
