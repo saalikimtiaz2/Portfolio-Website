@@ -1,4 +1,4 @@
-@import '../styles/colors';
+@import "../styles/colors";
 
 .title {
   font-size: 120px;
@@ -19,10 +19,10 @@
 }
 
 .heroImage {
-  max-height: 650px;
+  max-height: 600px;
   position: absolute;
   right: 0;
-  bottom: -20%;
+  bottom: -10%;
   z-index: 0;
   @media screen and (max-width: 768px) {
     max-height: 350px;
