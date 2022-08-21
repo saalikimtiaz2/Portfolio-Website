@@ -17,7 +17,7 @@ function NavBar() {
   }, [router]);
 
   return (
-    <div className="fixed xs:bottom-2 sm:bottom-4 xs:left-0 sm:left-1/2 sm:-translate-x-1/2 z-[150]  flex items-center justify-evenly gap-x-2 bg-black xs:bg-opacity-60 sm:bg-opacity-40 p-4 rounded-full backdrop-blur-sm">
+    <div className="fixed xs:bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 z-[150]  flex items-center justify-evenly gap-x-2 bg-black xs:bg-opacity-60 sm:bg-opacity-40 p-4 rounded-full backdrop-blur-sm">
       <Link href="/#home" passHref>
         <button
           className={`${btnClasses} ${
