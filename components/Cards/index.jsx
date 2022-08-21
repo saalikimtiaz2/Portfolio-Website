@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import Link from "next/link";
 import Styles from "./styles.module.scss";
@@ -51,11 +52,11 @@ function Card({ project }) {
             </p>
           ))}
         </div>
-        <Link href={project.link} hrefPass>
+        <a href={project.link} target="_blank" className="w-full">
           <button className="w-full text-white bg-black  border border-black py-2 text-14 mt-4 hover:text-black hover:bg-white hover:border-white transition-all ease-in-out duration-500">
             View
           </button>
-        </Link>
+        </a>
       </div>
     </div>
   );

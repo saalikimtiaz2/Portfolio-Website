@@ -148,14 +148,21 @@ function Home() {
               <div className="xs:col-span-12 lg:col-span-6">
                 <h3>/ problem solver</h3>
                 <h2 className="max-w-45">
-                  Experienced Front-end Engineer adept in bringing forth
+                  Experienced Frontend Engineer adept in bringing forth
                   expertise in web systems.
                 </h2>
-                <p className="max-w-55 mt-8 ">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                  quae nemo saepe quas modi excepturi autem? Lorem ipsum dolor
-                  sit amet consectetur adipisicing elit. Esse quae nemo saepe
-                  quas modi excepturi autem?
+                <h4 className="mt-8 text-20">Professional Experience</h4>
+                <h5 className="max-w-55 mt-2 text-secondary">
+                  Frontend Engineer, Code Huddle, Islamabad
+                </h5>
+                <p className="max-w-55 font-light text-14">
+                  FEBRUARY 2022 - Present
+                </p>
+                <h5 className="max-w-55 mt-2 text-secondary">
+                  Frontend Engineer, The Web Agency, Islamabad
+                </h5>
+                <p className="max-w-55 font-light text-14">
+                  APRIL 2022 - JANUARY 2022
                 </p>
                 <a href="/assets/Salik-Resume.pdf" download>
                   <button className="text-24 text-primary flex items-center gap-4 mt-4 btn~ btn-down">
@@ -189,18 +196,29 @@ function Home() {
                     darkMode
                       ? "hover:bg-darkCard hover:shadow-xl"
                       : "hover:shadow-md"
-                  } p-6 gap-4 rounded-md xs:h-28 xs:w-28
-                   lg:h-32 lg:w-32 flex flex-col justify-center items-center trasition duration-700 `}
+                  } px-6 py-4 gap-4 rounded-md xs:h-32 xs:w-32
+                   lg:h-36 lg:w-36 flex flex-col items-center trasition duration-700 ${
+                     Styles.techCard
+                   }`}
                   key={icon.name}
                 >
                   {darkMode ? (
-                    <img src={icon.darkImage} alt="" className="h-16" />
+                    <img
+                      src={icon.darkImage}
+                      alt=""
+                      className="xs:h-[3rem] lg:h-16"
+                    />
                   ) : (
-                    <img src={icon.image} alt="" className="h-16" />
+                    <img
+                      src={icon.image}
+                      alt=""
+                      className="xs:h-[3rem] lg:h-16"
+                    />
                   )}
-                  <p className="text-gray xs:text-12 lg:text-14 text-center">
+                  <p className="text-gray xs:text-12 lg:text-14 text-center pb-0">
                     {icon.name}
                   </p>
+                  <span className="border-b-2 border-primary" />
                 </div>
               ))}
             </div>

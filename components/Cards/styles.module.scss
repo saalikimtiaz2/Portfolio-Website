@@ -1,13 +1,13 @@
 .cardRoot {
   .overlay {
-    transform: translateY(100%);
+    transform: translateY(30rem);
   }
   &:hover {
     .overlay {
       transform: translateY(0);
     }
     .overlay2 {
-      transform: translateY(100%);
+      transform: translateY(30rem);
     }
   }
 }

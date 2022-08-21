@@ -58,3 +58,14 @@
     min-height: 300px;
   }
 }
+.techCard {
+  span {
+    width: 8px;
+    transition: all 0.5s ease-in-out;
+  }
+  &:hover {
+    span {
+      width: 3rem;
+    }
+  }
+}

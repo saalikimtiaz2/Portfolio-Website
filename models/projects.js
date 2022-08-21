@@ -22,6 +22,18 @@ const project =[
         tags:[
             "React","Ant Design","SCSS", "Redux" 
         ]
+    },
+    {
+        title:"House Hint",
+        subtitle:"Real Estate Marketplace.",
+        bg:"#29AAE3",
+        image:"/assets/projects/househint.jpg",
+        logo:"/assets/projects/logos/househint.svg",
+        link:"http://househint.com/",
+        description:"Cambodian-based House Hint has the most thorough, up-to-date set of Vancouver real estate listings..",
+        tags:[
+            "React","Tailwind","SCSS", "Context","Stripe", "Google Maps"
+        ]
     }
 ];
 

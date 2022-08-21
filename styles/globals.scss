@@ -237,3 +237,6 @@ textarea {
     transform: translateY(10px) rotate(90deg);
   }
 }
+.active {
+  background-color: $primary !important;
+}
