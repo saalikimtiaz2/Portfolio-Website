@@ -162,7 +162,7 @@ function Home() {
                   Frontend Engineer, The Web Agency, Islamabad
                 </h5>
                 <p className="max-w-55 font-light text-14">
-                  APRIL 2022 - JANUARY 2022
+                  APRIL 2020 - JANUARY 2022
                 </p>
                 <a href="/assets/Salik-Resume.pdf" download>
                   <button className="text-24 text-primary flex items-center gap-4 mt-4 btn~ btn-down">
@@ -215,7 +215,7 @@ function Home() {
                       className="xs:h-[3rem] lg:h-16"
                     />
                   )}
-                  <p className="text-gray xs:text-12 lg:text-14 text-center pb-0">
+                  <p className="xs:text-12 lg:text-14 text-center pb-0">
                     {icon.name}
                   </p>
                   <span className="border-b-2 border-primary" />
