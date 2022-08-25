@@ -41,7 +41,7 @@ const project =[
         bg:"#FF8382",
         image:"/assets/projects/gymyg.jpg",
         logo:"/assets/projects/logos/gymyg.svg",
-        link:"http://gymyg-fit.herokuapp.com/",
+        link:"https://gymyg-fit.herokuapp.com/",
         description:"US-based Gymyg is online gym focuses on training users.",
         tags:[
             "React","Tailwind","SCSS", "Redux Toolkit"
