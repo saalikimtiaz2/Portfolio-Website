@@ -30,9 +30,21 @@ const project =[
         image:"/assets/projects/househint.jpg",
         logo:"/assets/projects/logos/househint.svg",
         link:"http://househint.com/",
-        description:"Cambodian-based House Hint has the most thorough, up-to-date set of Vancouver real estate listings..",
+        description:"Cambodian-based House Hint has the most thorough, up-to-date set of Vancouver real estate listings.",
         tags:[
             "React","Tailwind","SCSS", "Context","Stripe", "Google Maps"
+        ]
+    },
+     {
+        title:"Gymyg Fit",
+        subtitle:"Online Gym",
+        bg:"#FF8382",
+        image:"/assets/projects/gymyg.jpg",
+        logo:"/assets/projects/logos/gymyg.svg",
+        link:"https://gymyg-fit.herokuapp.com/",
+        description:"US-based Gymyg is online gym focuses on training users.",
+        tags:[
+            "React","Tailwind","SCSS", "Redux Toolkit"
         ]
     }
 ];
