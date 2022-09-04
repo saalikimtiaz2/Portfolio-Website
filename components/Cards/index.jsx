@@ -16,7 +16,7 @@ function Card({ project }) {
 
   return (
     <div
-      className={`${Styles.cardRoot} xs:h-[28rem] lg:h-[22rem] w-full relative rounded-xl overflow-hidden bg-cover bg-center hover:shadow-2xl hover:scale-[1.05] transition-all duration-500 ease-in-out`}
+      className={`${Styles.cardRoot} xs:h-[28rem] lg:h-[22rem] w-full relative rounded-xl overflow-hidden bg-cover bg-center hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 ease-in-out`}
       style={{ backgroundImage: `url(${project.image})` }}
     >
       <div
@@ -45,7 +45,7 @@ function Card({ project }) {
         <div className="flex items-center gap-1 flex-wrap justify-center pt-4">
           {project.tags.map((tag) => (
             <p
-              className="text-white whitespace-nowrap text-[12px] p-2 border border-white "
+              className="text-white whitespace-nowrap text-[10px] p-1 border border-white "
               key={tag}
             >
               {tag}
