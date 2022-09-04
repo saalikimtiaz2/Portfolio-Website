@@ -19,22 +19,73 @@ function Contact() {
 
   const onSubmit = (data) => {
     console.log(data);
-    const resolveLater = new Promise((resolve) => setTimeout(resolve, 2000));
-    toast.promise(
-      resolveLater,
-      {
-        pending: "Sending...",
-        success:
-          ("Message Sent!",
-          {
-            icon: ({ theme, type }) => (
-              <img src="/assets/icons/msg.svg" alt="" />
-            ),
-          }),
-        error: "Message not Sent!",
+
+    let xhr = new XMLHttpRequest();
+    let url =
+      "https://api.hsforms.com/submissions/v3/integration/submit/22549698/49c001c2-c6b5-4f5f-872e-675f82e63644";
+    var allData = {
+      fields: [
+        {
+          name: "firstname",
+          value: data.fullName,
+        },
+        {
+          name: "email",
+          value: data.email,
+        },
+        {
+          name: "message",
+          value: data?.detail,
+        },
+      ],
+      context: {
+        pageUri: "www.salik.dev",
+        pageName: "Salik Imtiaz",
       },
-      { theme: darkMode ? "dark" : "light" }
-    );
+    };
+
+    console.log(allData.field);
+
+    var final_data = JSON.stringify(allData);
+
+    xhr.open("POST", url);
+    // Sets the value of the 'Content-Type' HTTP request headers to 'application/json'
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        toast.success(`Thank You! Form Submitted Successfully. `, {
+          theme: darkMode ? "dark" : "light",
+        }); // Returns a 200 response if the submission is successful.
+      } else if (xhr.readyState == 4 && xhr.status == 400) {
+        toast.error(xhr.responseText, { theme: darkMode ? "dark" : "light" }); // Returns a 400 error the submission is rejected.
+      } else if (xhr.readyState == 4 && xhr.status == 403) {
+        toast.error(xhr.responseText, { theme: darkMode ? "dark" : "light" }); // Returns a 403 error if the portal isn't allowed to post submissions.
+      } else if (xhr.readyState == 4 && xhr.status == 404) {
+        toast.error(xhr.responseText, { theme: darkMode ? "dark" : "light" }); //Returns a 404 error if the formGuid isn't found
+      }
+    };
+
+    // Sends the request
+
+    xhr.send(final_data);
+
+    // const resolveLater = new Promise((resolve) => setTimeout(resolve, 2000));
+    // toast.promise(
+    //   resolveLater,
+    //   {
+    //     pending: "Sending...",
+    //     success:
+    //       ("Message Sent!",
+    //       {
+    //         icon: ({ theme, type }) => (
+    //           <img src="/assets/icons/msg.svg" alt="" />
+    //         ),
+    //       }),
+    //     error: "Message not Sent!",
+    //   },
+    //   { theme: darkMode ? "dark" : "light" }
+    // );
 
     reset();
   };
