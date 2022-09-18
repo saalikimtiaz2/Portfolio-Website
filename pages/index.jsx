@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import Head from "next/head";
+
 import Layout from "../components/Layout";
 import Card from "../components/Cards";
 import {
@@ -16,6 +17,7 @@ import {
 import Contact from "../containers/Contact";
 import { icons } from "../models";
 import Projects from "../models/projects";
+
 import Styles from "../styles/home.module.scss";
 import "react-toastify/dist/ReactToastify.css";
 

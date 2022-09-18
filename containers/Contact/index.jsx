@@ -18,8 +18,6 @@ function Contact() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-
     let xhr = new XMLHttpRequest();
     let url =
       "https://api.hsforms.com/submissions/v3/integration/submit/22549698/49c001c2-c6b5-4f5f-872e-675f82e63644";
@@ -43,8 +41,6 @@ function Contact() {
         pageName: "Salik Imtiaz",
       },
     };
-
-    console.log(allData.field);
 
     var final_data = JSON.stringify(allData);
 
@@ -101,10 +97,6 @@ function Contact() {
               className="headingIcon"
             />
           </h2>
-          <p className="max-w-45 mt-8 text-14 text-gray">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quae
-            nemo saepe quas modi excepturi autem.
-          </p>
           <h2
             className={`stylishHeading -rotate-10 text-center ${
               darkMode ? "text-darkGray" : "text-gray"
@@ -112,8 +104,26 @@ function Contact() {
           >
             Inquiries.
           </h2>
+          <h4 className=" mt-8 text-24 text-gray  mx-auto">
+            <span>Email:</span>{" "}
+          </h4>
+          <p className=" text-20  mx-auto">
+            <a
+              href="mailto:r.salikimtiaz@gmail.com"
+              className="hover:underline"
+            >
+              r.salikimtiaz@gmail.com
+            </a>
+            <br />
+            <a href="mailto:inquiries@salik.dev" className="hover:underline">
+              inquiries@salik.dev
+            </a>
+          </p>
         </div>
         <div className="xs:col-span-12 lg:col-span-6">
+          <p className="max-w-25  mt-8 text-24 font-light  mb-10 text-center mx-auto">
+            Let&apos;s make something great in web design!
+          </p>
           <form onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="fullName">
               Your Name
