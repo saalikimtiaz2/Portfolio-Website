@@ -30,12 +30,12 @@ function Home() {
   const [hoverDeveloper, setHoverDeveloper] = useState(false);
 
   // Ref's
-  const contactRef = useRef();
+  const aboutRef = useRef();
 
   // Ref's Function
-  const handleContactScroll = () => {
-    if (contactRef && contactRef.current) {
-      contactRef.current.scrollIntoView({
+  const handleAboutScroll = () => {
+    if (aboutRef && aboutRef.current) {
+      aboutRef.current.scrollIntoView({
         behavior: "smooth",
       });
     }
@@ -81,10 +81,10 @@ function Home() {
                     collaborate as part of a productive team.
                   </p>
                   <button
-                    onClick={handleContactScroll}
+                    onClick={handleAboutScroll}
                     className="text-24 text-primary flex items-center gap-4 mt-4 btn btn-right"
                   >
-                    Hire Me
+                    About
                     <img
                       src="/assets/icons/right-arrow.svg"
                       alt=""
@@ -126,6 +126,7 @@ function Home() {
           <div
             className="xs:px-4 lg:px-0 lg:container lg:mx-auto pt-24"
             id="about"
+            ref={aboutRef}
           >
             <div className="grid grid-cols-12 xs:gap-y-20 lg:gap-6 mb-10">
               <div className="xs:col-span-12 lg:col-span-6 relative">
@@ -326,7 +327,6 @@ function Home() {
         </section>
         <section
           className={`lg:py-32 ${darkMode ? "bg-darkCard" : "bg-grayBg"}`}
-          ref={contactRef}
           id="contact"
         >
           <Contact />
