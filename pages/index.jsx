@@ -70,7 +70,8 @@ function Home() {
                 <div>
                   <h3>/ This is me</h3>
                   <h2 className="max-w-20">
-                    Experienced frontend engineer remotly from Dubai, UAE.
+                    Experienced frontend engineer
+                    {/* remotly from Dubai, UAE. */}
                   </h2>
                   <p className="max-w-35 mt-8 text-16 text-gray">
                     Proficient in various platforms, languages, and design
