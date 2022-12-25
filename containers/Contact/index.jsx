@@ -115,9 +115,9 @@ function Contact() {
               r.salikimtiaz@gmail.com
             </a>
             <br />
-            <a href="mailto:inquiries@salik.dev" className="hover:underline">
+            {/* <a href="mailto:inquiries@salik.dev" className="hover:underline">
               inquiries@salik.dev
-            </a>
+            </a> */}
           </p>
         </div>
         <div className="xs:col-span-12 lg:col-span-6">

@@ -70,8 +70,7 @@ function Home() {
                 <div>
                   <h3>/ This is me</h3>
                   <h2 className="max-w-20">
-                    Experienced frontend engineer remotly from Islamabad,
-                    Pakistan.
+                    Experienced frontend engineer remotly from Dubai, UAE.
                   </h2>
                   <p className="max-w-35 mt-8 text-16 text-gray">
                     Proficient in various platforms, languages, and design
@@ -156,16 +155,22 @@ function Home() {
                 </h2>
                 <h4 className="mt-8 text-20">Professional Experience</h4>
                 <h5 className="max-w-55 mt-2 text-secondary">
+                  Frontend Engineer (Remote), Code Huddle, Islamabad
+                </h5>
+                <p className="max-w-55 font-light text-14">
+                  DECEMBER 2022 - Present
+                </p>
+                <h5 className="max-w-55 mt-2 text-secondary">
                   Frontend Engineer, Code Huddle, Islamabad
                 </h5>
                 <p className="max-w-55 font-light text-14">
-                  FEBRUARY 2022 - Present
+                  DECEMBER 2021 - NOVEMBER 2022
                 </p>
                 <h5 className="max-w-55 mt-2 text-secondary">
                   Frontend Engineer, The Web Agency, Islamabad
                 </h5>
                 <p className="max-w-55 font-light text-14">
-                  APRIL 2020 - JANUARY 2022
+                  APRIL 2020 - NOVEMBER 2021
                 </p>
                 <a href="/assets/Salik-Resume.pdf" download>
                   <button className="text-24 text-primary flex items-center gap-4 mt-4 btn~ btn-down">
