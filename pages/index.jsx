@@ -74,11 +74,14 @@ function Home() {
                     {/* remotly from Dubai, UAE. */}
                   </h2>
                   <p className="max-w-35 mt-8 text-16 text-gray">
-                    Proficient in various platforms, languages, and design
-                    systems. Experienced with the latest cutting-edge
-                    development tools and procedures. Able to effectively
-                    self-manage during independent projects, as well as
-                    collaborate as part of a productive team.
+                    As a front-end developer with a focus on React, I have a
+                    strong foundation in web development and a passion for
+                    building user-friendly and visually appealing web
+                    applications. I am constantly learning and staying
+                    up-to-date on the latest technologies (such as React Js,
+                    Next Js, Vite Js, Javascript, Typescript, WebRTC, Sanity
+                    CRM, AWS and Restful API&apos;s) in the field to ensure that
+                    I am able to deliver high-quality products to my clients.
                   </p>
                   <button
                     onClick={handleAboutScroll}
@@ -128,7 +131,7 @@ function Home() {
             id="about"
             ref={aboutRef}
           >
-            <div className="grid grid-cols-12 xs:gap-y-20 lg:gap-6 mb-10">
+            <div className="grid grid-cols-12 xs:gap-y-20 lg:gap-6 mb-10 items-center">
               <div className="xs:col-span-12 lg:col-span-6 relative">
                 <h2
                   className={`stylishHeading -rotate-10 text-center ${
@@ -137,15 +140,15 @@ function Home() {
                 >
                   About.
                 </h2>
-                <div className="flex items-center justify-evenly mt-4">
+                <div className="flex items-center justify-center mt-4">
                   <div>
                     <h2 className="text-40 text-primary mb-2">3+</h2>
                     <h2 className="text-20 max-w-15">Years of experience.</h2>
                   </div>
-                  <div>
+                  {/* <div>
                     <h2 className="text-40 text-primary mb-2">30+</h2>
                     <h2 className="text-20 max-w-10">Satisfied clients.</h2>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="xs:col-span-12 lg:col-span-6">
@@ -154,36 +157,113 @@ function Home() {
                   Experienced Frontend Engineer adept in bringing forth
                   expertise in web systems.
                 </h2>
-                <h4 className="mt-8 text-20">Professional Experience</h4>
-                <h5 className="max-w-55 mt-2 text-secondary">
-                  Frontend Engineer (Remote), Code Huddle, Islamabad
+              </div>
+            </div>
+            <h4 className="mt-12 text-24 mb-4 text-center">
+              - Where I’ve Worked
+            </h4>
+            <div className="grid grid-cols-12 gap-4">
+              <div className="xs:col-span-12 lg:col-span-4">
+                <h5 className="max-w-55 text-[18px] mt-2 text-secondary">
+                  Frontend Engineer (Remote),
+                  <span className="block text-[14px]">
+                    Code Huddle, Islamabad
+                  </span>
                 </h5>
-                <p className="max-w-55 font-light text-14">
+                <p className="max-w-55 font-light text-[10px]">
                   DECEMBER 2022 - Present
                 </p>
-                <h5 className="max-w-55 mt-2 text-secondary">
-                  Frontend Engineer, Code Huddle, Islamabad
+                <ul className="pl-8 text-[12px] max-w-[55ch] list-disc py-4 font-light">
+                  <li>
+                    Developed and Shipped the fronted features of live Gym
+                    training application.
+                  </li>
+                  <li>
+                    Incorporated TS into an existing JS project which helped
+                    improve the developer experience and reliability of
+                    the application.
+                  </li>
+                  <li>
+                    Collaborated with cross-functional teams, including
+                    designers, project managers, and back-end developers, to
+                    deliver successful projects on time.
+                  </li>
+                  <li>
+                    Led the front-end development of a customer service
+                    platform, including the implementation of responsive design
+                    and the integration of various APIs.
+                  </li>
+                </ul>
+              </div>
+              <div className="xs:col-span-12 lg:col-span-4">
+                <h5 className="max-w-55 text-[18px] mt-2 text-secondary">
+                  Frontend Engineer,
+                  <span className="block text-[14px]">
+                    Code Huddle, Islamabad
+                  </span>
                 </h5>
-                <p className="max-w-55 font-light text-14">
+                <p className="max-w-55 font-light text-[10px]">
                   DECEMBER 2021 - NOVEMBER 2022
                 </p>
-                <h5 className="max-w-55 mt-2 text-secondary">
-                  Frontend Engineer, The Web Agency, Islamabad
+                <ul className="pl-8 text-[12px] max-w-[55ch] list-disc py-4 font-light">
+                  <li>
+                    Incorporated name of library in to the above mentioned
+                    application which enabled trainers and instructors to
+                    communicate in real time which helped increase the
+                    subscription rate by 35%
+                  </li>
+                  <li>
+                    Developed the frontend prototype for an AI SASS that helped
+                    user write better content.
+                  </li>
+                  <li>
+                    Migrated an old metior based library to next improving the
+                    build time from 12 mins to 2.8 minutes which resulted in
+                    dropping the build cost by 70%
+                  </li>
+                  <li>
+                    Effectively translated client requirements into application
+                    designs and system requirements.
+                  </li>
+                </ul>
+              </div>
+              <div className="xs:col-span-12 lg:col-span-4">
+                <h5 className="max-w-55 text-[18px] mt-2 text-secondary">
+                  Frontend Developer,
+                  <span className="block text-[14px]">
+                    The Web Agency, Islamabad
+                  </span>
                 </h5>
-                <p className="max-w-55 font-light text-14">
+                <p className="max-w-55 font-light text-[10px]">
                   APRIL 2020 - NOVEMBER 2021
                 </p>
-                <a href="/assets/Salik-Resume.pdf" download>
-                  <button className="text-24 text-primary flex items-center gap-4 mt-4 btn~ btn-down">
-                    Download Resume
-                    <img
-                      src="/assets/icons/right-arrow.svg"
-                      alt=""
-                      className="h-3 rotate-90"
-                    />
-                  </button>
-                </a>
+                <ul className="pl-8 text-[12px] max-w-[55ch] list-disc py-4 font-light">
+                  <li>Created, communicated, and managed project plans.</li>
+                  <li>
+                    Collaborated to create strategic initiatives to design,
+                    code, and test solutions.
+                  </li>
+                  <li>
+                    Effectively coded software changes and alterations based on
+                    specific design specifications.
+                  </li>
+                  <li>
+                    Brought forth a passion and dedication to software
+                    development
+                  </li>
+                  <li>Helped to provide industry-leading solutions.</li>
+                </ul>
               </div>
+              {/* <a href="/assets/Salik-Resume.pdf" download>
+                <button className="text-24 text-primary flex items-center gap-4 mt-4 btn~ btn-down">
+                  Download Resume
+                  <img
+                    src="/assets/icons/right-arrow.svg"
+                    alt=""
+                    className="h-3 rotate-90"
+                  />
+                </button>
+              </a> */}
             </div>
           </div>
           <div id="techStack" className="py-16">
@@ -194,10 +274,10 @@ function Home() {
             >
               Tech Stack.
             </h2>
-            <p className="max-w-55 text-center text-gray mx-auto mt-4">
+            {/* <p className="max-w-55 text-center text-gray mx-auto mt-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quae
               nemo saepe quas modi excepturi autem.
-            </p>
+            </p> */}
             <div className="lg:container lg:mx-auto flex items-center flex-wrap justify-center xs:gap-10 lg:gap-x-20 mt-20">
               {icons.map((icon) => (
                 <div
@@ -232,7 +312,7 @@ function Home() {
               ))}
             </div>
           </div>
-          <div className="lg:container lg:mx-auto" id="services">
+          {/* <div className="lg:container lg:mx-auto" id="services">
             <div className="grid grid-cols-12 mt-20 xs:gap-4 lg:gap-10 items-center">
               <div className="xs:col-span-12 lg:col-span-5 p-4">
                 <h2
@@ -296,7 +376,7 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
         <section id="work">
           <div className="lg:container lg:mx-auto xs:px-4 lg:px-0">
@@ -305,8 +385,8 @@ function Home() {
                 <h3>/ works</h3>
                 <h2 className="max-w-15">Selected work client projects.</h2>
                 <p className="max-w-40 mt-8 text-14 text-gray">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                  quae nemo saepe quas modi excepturi autem.
+                  Some seletive project chosen by me. I have completed these
+                  projects with some amazing people from different companies.
                 </p>
               </div>
               <div className="xs:col-span-12 lg:col-span-7">

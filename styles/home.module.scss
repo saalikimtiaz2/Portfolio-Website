@@ -19,13 +19,16 @@
 }
 
 .heroImage {
-  max-height: 600px;
+  max-height: 80vh;
   position: absolute;
   right: 0;
-  bottom: -10%;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 0;
-  @media screen and (max-width: 768px) {
-    max-height: 350px;
+  @media screen and (max-width: 960px) {
+    transform: translateY(0);
+
+    height: auto;
     margin-right: 0;
     position: relative;
     right: 0;

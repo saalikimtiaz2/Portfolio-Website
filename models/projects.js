@@ -46,6 +46,30 @@ const project =[
         tags:[
             "React","Tailwind","SCSS", "Redux Toolkit"
         ]
+    },
+    {
+        title:"Ordinami",
+        subtitle:"Restaurant QR Order System",
+        bg:"#00b2bd",
+        image:"/assets/projects/ordinami.jpg",
+        logo:"/assets/projects/logos/ordinami.svg",
+        link:"https://www.code-huddle.com/case-study#ordinami",
+        description:"The most efficient Ordering Experience in Italy",
+        tags:[
+            "React","Next","Tailwind","SCSS", "Context API"
+        ]
+    },
+    {
+        title:"Upfocus",
+        subtitle:"Fully Custom CRM",
+        bg:"#696BC8",
+        image:"/assets/projects/upfocus.jpg",
+        logo:"/assets/projects/logos/upfocus.svg",
+        link:"https://www.code-huddle.com/case-study#upfocus",
+        description:"The most efficient and dynamic CRM.",
+        tags:[
+            "React","Meteor JS","Tailwind","SCSS", "Easy Dev"
+        ]
     }
 ];
 
