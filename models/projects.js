@@ -28,7 +28,7 @@ const project =[
         subtitle:"Real Estate Marketplace.",
         bg:"#29AAE3",
         image:"/assets/projects/househint.jpg",
-        logo:"/assets/projects/logos/househint.svg",
+        logo:"https://www.code-huddle.com/case-study/house-hint",
         link:"http://househint.com/",
         description:"Cambodian-based House Hint has the most thorough, up-to-date set of Vancouver real estate listings.",
         tags:[
@@ -41,7 +41,7 @@ const project =[
         bg:"#FF8382",
         image:"/assets/projects/gymyg.jpg",
         logo:"/assets/projects/logos/gymyg.svg",
-        link:"https://gymyg-fit.herokuapp.com/",
+        link:"https://www.code-huddle.com/case-study/gymyg-fit",
         description:"US-based Gymyg is online gym focuses on training users.",
         tags:[
             "React","Tailwind","SCSS", "Redux Toolkit"
