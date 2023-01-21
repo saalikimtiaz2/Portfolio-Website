@@ -24,6 +24,18 @@ const project =[
         ]
     },
     {
+        title:"Coinlink Escrow",
+        subtitle:"Bitcoin Escrow.",
+        bg:'#FAC417',
+        image:"/assets/projects/coinlink.jpg",
+        logo:"/assets/projects/logos/coinlink.png",
+        link:"https://www.thewebagency.io/work/coinlink-escrow",
+        description:"The Most Trustworthy Offshore Anonymous Bitcoin Escrow.",
+        tags:[
+            "React","Ant Design", "Redux" 
+        ]
+    },
+    {
         title:"House Hint",
         subtitle:"Real Estate Marketplace.",
         bg:"#29AAE3",

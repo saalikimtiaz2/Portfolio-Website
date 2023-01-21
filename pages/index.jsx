@@ -380,7 +380,7 @@ function Home() {
         </section>
         <section id="work">
           <div className="lg:container lg:mx-auto xs:px-4 lg:px-0">
-            <div className="grid grid-cols-12 items-end">
+            <div className="grid grid-cols-12 items-center justify-center">
               <div className="xs:col-span-12 lg:col-span-5">
                 <h3>/ works</h3>
                 <h2 className="max-w-15">Selected work client projects.</h2>
