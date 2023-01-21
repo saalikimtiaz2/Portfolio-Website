@@ -28,8 +28,8 @@ const project =[
         subtitle:"Real Estate Marketplace.",
         bg:"#29AAE3",
         image:"/assets/projects/househint.jpg",
-        logo:"https://www.code-huddle.com/case-study/house-hint",
-        link:"http://househint.com/",
+        logo:"/assets/projects/logos/househint.svg",
+        link:"https://www.code-huddle.com/case-study/house-hint",
         description:"Cambodian-based House Hint has the most thorough, up-to-date set of Vancouver real estate listings.",
         tags:[
             "React","Tailwind","SCSS", "Context","Stripe", "Google Maps"
