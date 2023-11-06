@@ -1,8 +1,12 @@
 "use client";
+// import { getProfile } from "@/sanity/sanity.query";
+// import type { ProfileType } from "@/types/sanity";
+
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import { MdOutlineDocumentScanner } from "react-icons/md";
 import { Typewriter } from "react-simple-typewriter";
+import { CgWebsite } from "react-icons/cg";
 import {
   FaFacebookF,
   FaInstagram,
@@ -11,6 +15,11 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { CiCoffeeCup } from "react-icons/ci";
+import { VscSettings } from "react-icons/vsc";
+import { BsFillTerminalFill } from "react-icons/bs";
+
+import type { techStackTypes } from "@/types/techStackTypes";
+import { techStack } from "@/dummyData/techStack";
 
 const socialIcons = [
   {
@@ -59,7 +68,29 @@ const wordsList = [
   "Ciao",
 ];
 
-export default function Home() {
+const services = [
+  {
+    title: "Front-end Development",
+    icon: <CgWebsite />,
+    subtitle:
+      "Expert in HTML/CSS, React JS, Next JS, ES6, Javascript, Typescript",
+  },
+  {
+    title: "Back-end Development",
+    icon: <BsFillTerminalFill />,
+    subtitle: "Expert in Node Js, Express, MongoDB, SQL",
+  },
+  {
+    title: "Version Control",
+    icon: <VscSettings />,
+    subtitle: "Expert in Git, Github, Bitbucket. Providing the best.",
+  },
+];
+
+const Home = () => {
+  // const profile: ProfileType[] = await getProfile();
+  // if (profile) console.log(profile);
+
   return (
     <Layout>
       <section className="flex h-[768px] z-50 relative landingArea bg-accent dark:bg-black ">
@@ -102,7 +133,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative bg-white dark:bg-neutral-900 pt-40 pb-8 px-4 lg:px-20 ">
+      <section className="relative bg-white dark:bg-neutral-900 py-40 px-4 lg:px-20 ">
         <div className="absolute hover:scale-[1.05] transition-all duration-300 ease-in-out z-[100] xs:-top-[10rem] sm:-top-[16rem] md:-top-[20rem]  right-8 sm:right-16 xl:right-48 xs:h-[300px] md:h-[450px] xl:h-[550px] xs:w-[300px] md:w-[450px] xl:w-[550px] bg-indigo-700 rounded-lg sm:rotate-6">
           <div>
             <img
@@ -132,7 +163,50 @@ export default function Home() {
         <h1 className="xs:text-3xl md:text-5xl text-center font-dm leading-loose mx-auto w-[20ch] mt-32">
           I'm specialize in a range of 💪 Skills
         </h1>
+        <div className="lg:container mx-auto px-4 sm:px-20 pb-10 mt-20 grid grid-cols-12 gap-4 md:gap-8 lg:gap-12">
+          {services.map((service, idx) => (
+            <div
+              key={service.title}
+              className="xs:col-span-12 md:col-span-4 relative overflow-hidden rounded-lg px-8 py-16 text-center shadow-lg dark:border border-neutral-800 hover:border-primary hover:bg-primary hover:shadow-2xl hover:text-white transition-all duration-500 ease-in-out"
+            >
+              <span className="absolute top-8 font-light -left-6 text-[80px] opacity-10 inline-block">
+                0{idx + 1}
+              </span>
+              <span className="inline-block mx-auto text-5xl">
+                {service.icon}
+              </span>
+              <h4 className="text-xl mt-6 mb-4">{service.title}</h4>
+              <p className="text-sm w-[25ch] mx-auto">{service.subtitle}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="min-h-screen py-8 relative px-4">
+        <div className="lg:container mx-auto">
+          <h3 className="absolute top-4 left-1/2 -translate-x-1/2 z-20 text-4xl md:text-[84px] font-bold uppercase opacity-5">
+            Technologies
+          </h3>
+          <h4 className="text-center font-dm text-3xl md:text-5xl z-50">
+            Tech Stack
+          </h4>
+          <div className="flex items-center justify-center gap-4 md:gap-12 flex-wrap pt-32">
+            {techStack.map((tech: techStackTypes) => (
+              <div key={tech.name}>
+                <div className="h-28 w-28 flex items-center p-2 justify-center rounded-full shadow-inner dark:bg-neutral-700 bg-neutral-100 backdrop-blur-sm">
+                  <img
+                    src={tech.logo}
+                    className="h-16 w-auto"
+                    alt={`${tech.name}'s logo`}
+                  />
+                </div>
+                <p className="text-center mt-4">{tech.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </Layout>
   );
-}
+};
+
+export default Home;
