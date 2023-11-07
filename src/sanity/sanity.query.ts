@@ -16,7 +16,8 @@ export async function getProfile() {
       "resumeURL": resumeURL.asset->url,
       socialLinks,
       serviceTitle,
-      services
+      services,
+      techStack
     }` // Add [0] to select the first matching profile (if there are multiple profiles)
   );
 }

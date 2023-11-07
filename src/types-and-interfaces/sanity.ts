@@ -4,6 +4,14 @@ export type serviceTypes = {
   title: string;
   subtitle: string;
 };
+export type techStackTypes = {
+  title: string;
+  logo: string;
+};
+export type socialLinkTypes = {
+  name: string;
+  url: string;
+};
 
 export interface ProfileType {
   _id: string;
@@ -21,5 +29,6 @@ export interface ProfileType {
   resumeURL: string;
   serviceTitle: string;
   services: serviceTypes[];
-  socialLinks: string[];
+  socialLinks: socialLinkTypes[];
+  techStack: techStackTypes[];
 }

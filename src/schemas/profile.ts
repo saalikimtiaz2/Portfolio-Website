@@ -70,51 +70,25 @@ const profile = {
     {
       name: "socialLinks",
       title: "Social Links",
-      type: "object",
+      type: "array",
       description: "Add your social media links:",
-      fields: [
+      of: [
         {
-          name: "github",
-          title: "Github URL",
-          type: "url",
-          initialValue: "https://github.com/",
-        },
-        {
-          name: "linkedin",
-          title: "Linkedin URL",
-          type: "url",
-          initialValue: "https://linkedin.com/in/",
-        },
-        {
-          name: "twitter",
-          title: "Twitter URL",
-          type: "url",
-          initialValue: "https://twitter.com/",
-        },
-        {
-          name: "facebook",
-          title: "Facebook URL",
-          type: "url",
-          initialValue: "https://facebook.com/",
-        },
-        {
-          name: "instagram",
-          title: "Instagram URL",
-          type: "url",
-          initialValue: "https://instagram.com/",
-        },
-        {
-          name: "coffee",
-          title: "Buy Me A Coffe URL",
-          type: "url",
-          initialValue: "https://buymeacoffe.com/",
+          type: "object",
+          fields: [
+            {
+              name: "name",
+              title: "Name",
+              type: "string",
+            },
+            {
+              name: "url",
+              title: "URL",
+              type: "url",
+            },
+          ],
         },
       ],
-      options: {
-        collapsed: false,
-        collapsible: true,
-        columns: 2,
-      },
     },
     {
       name: "serviceTitle",
@@ -139,6 +113,32 @@ const profile = {
               name: "subtitle",
               title: "Service Subtitle",
               type: "string",
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      name: "techStack",
+      title: "Tech Stack",
+      type: "array",
+      description: "List of your tech stack",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Technology Name",
+              type: "string",
+            },
+            {
+              name: "logo",
+              title: "Technology Logo",
+              type: "image",
+              description: "Upload a technology logo",
+              options: { hotspot: true },
             },
           ],
         },

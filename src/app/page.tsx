@@ -1,62 +1,19 @@
 "use client";
 import { getProfile } from "@/sanity/sanity.query";
 import { ProfileType } from "@/types-and-interfaces/sanity";
-import type { serviceTypes } from "@/types-and-interfaces/sanity";
+import type {
+  serviceTypes,
+  socialLinkTypes,
+  techStackTypes,
+} from "@/types-and-interfaces/sanity";
+import { imageUrlFor } from "@/sanity/sanity.client";
 
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import { MdOutlineDocumentScanner } from "react-icons/md";
 import { Typewriter } from "react-simple-typewriter";
-import { CgWebsite } from "react-icons/cg";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaGithub,
-} from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { CiCoffeeCup } from "react-icons/ci";
-import { VscSettings } from "react-icons/vsc";
-import { BsFillTerminalFill } from "react-icons/bs";
-
-import type { techStackTypes } from "@/types-and-interfaces/techStackTypes";
-import { techStack } from "@/dummyData/techStack";
 
 import getIcon from "@/helpers/getIcon";
-
-const socialIcons = [
-  {
-    name: "Linkedin",
-    icon: <FaLinkedinIn />,
-    link: "https://www.linkedin.com/in/salikimtiaz",
-  },
-  {
-    name: "Github",
-    icon: <FaGithub />,
-    link: "https://github.com/saalikimtiaz2",
-  },
-  {
-    name: "X",
-    icon: <FaXTwitter />,
-    link: "https://twitter.com/salik__imtiaz",
-  },
-  {
-    name: "Facebook",
-    icon: <FaFacebookF />,
-    link: "https://www.facebook.com/saalikimtiaz2",
-  },
-  {
-    name: "Instgram",
-    icon: <FaInstagram />,
-    link: "https://www.instagram.com/salik.dev",
-  },
-
-  {
-    name: "Buy me a Coffee",
-    icon: <CiCoffeeCup />,
-    link: "https://www.buymeacoffee.com/salikimtiazx",
-  },
-];
 
 const wordsList = [
   "سلام",
@@ -69,25 +26,6 @@ const wordsList = [
   "Olá",
   "नमस्ते",
   "Ciao",
-];
-
-const services = [
-  {
-    title: "Front-end Development",
-    icon: <CgWebsite />,
-    subtitle:
-      "Expert in HTML/CSS, React JS, Next JS, ES6, Javascript, Typescript",
-  },
-  {
-    title: "Back-end Development",
-    icon: <BsFillTerminalFill />,
-    subtitle: "Expert in Node Js, Express, MongoDB, SQL",
-  },
-  {
-    title: "Version Control",
-    icon: <VscSettings />,
-    subtitle: "Expert in Git, Github, Bitbucket. Providing the best.",
-  },
 ];
 
 const Home = async () => {
@@ -140,17 +78,17 @@ const Home = async () => {
         <div className="absolute hover:scale-[1.05] transition-all duration-300 ease-in-out z-[100] xs:-top-[10rem] sm:-top-[16rem] md:-top-[20rem]  right-8 sm:right-16 xl:right-48 xs:h-[300px] md:h-[450px] xl:h-[550px] xs:w-[300px] md:w-[450px] xl:w-[550px] bg-indigo-700 rounded-lg sm:rotate-6">
           <div>
             <img
-              src="/images/salik.png"
+              src={profile[0].profileImage.image}
               className="absolute bottom-0 right-0 rounded-lg "
             />
           </div>
         </div>
         <p>Follow Me:</p>
         <div className="mt-4 flex items-center gap-4 flex-wrap">
-          {socialIcons.map((social) => (
-            <Link key={social.name} href={social.link}>
+          {profile[0].socialLinks.map((social: socialLinkTypes) => (
+            <Link key={social.name} href={social.url}>
               <button className="xs:h-10 sm:h-12 xs:w-10 sm:w-12 text-[1rem] sm:text-[1.5rem] flex items-center justify-center rounded-full border border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-500 ease-in-out">
-                {social.icon}
+                {getIcon(social.name)}
               </button>
             </Link>
           ))}
@@ -191,16 +129,16 @@ const Home = async () => {
             Tech Stack
           </h4>
           <div className="flex items-center justify-center gap-4 md:gap-12 flex-wrap pt-32">
-            {techStack.map((tech: techStackTypes) => (
-              <div key={tech.name}>
+            {profile[0].techStack.map((tech: techStackTypes) => (
+              <div key={tech.title}>
                 <div className="h-28 w-28 flex items-center p-2 justify-center rounded-full shadow-inner dark:bg-neutral-700 bg-neutral-100 backdrop-blur-sm">
                   <img
-                    src={tech.logo}
+                    src={imageUrlFor(tech.logo).url()}
                     className="h-16 w-auto"
-                    alt={`${tech.name}'s logo`}
+                    alt={`${tech.title}'s logo`}
                   />
                 </div>
-                <p className="text-center mt-4">{tech.name}</p>
+                <p className="text-center mt-4">{tech.title}</p>
               </div>
             ))}
           </div>

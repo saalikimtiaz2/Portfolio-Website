@@ -1,4 +1,5 @@
 import { createClient, type ClientConfig } from "@sanity/client";
+import imageUrlBuilder from "@sanity/image-url";
 
 const config: ClientConfig = {
   projectId: "0hh2ln46",
@@ -8,5 +9,10 @@ const config: ClientConfig = {
 };
 
 const client = createClient(config);
+
+const builder = imageUrlBuilder(client);
+export const imageUrlFor = (source: any) => {
+  return builder.image(source);
+};
 
 export default client;
