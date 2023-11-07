@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
    "engines": {
-    "npm": ">=10.x",
-    "node": ">=20.x"
+    "npm": "10.1.0",
+    "node": "20.9.0"
   },
   "dependencies": {
     "@sanity/client": "^6.7.1",
