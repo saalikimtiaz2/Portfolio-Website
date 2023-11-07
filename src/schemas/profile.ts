@@ -58,11 +58,6 @@ const profile = {
       type: "string",
     },
     {
-      name: "fullBio",
-      title: "Full Bio",
-      type: "text",
-    },
-    {
       name: "resumeURL",
       title: "Upload Resume",
       type: "file",

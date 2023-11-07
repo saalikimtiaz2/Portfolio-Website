@@ -95,7 +95,9 @@ const Home = async () => {
         <p className="text-center sm:w-[35ch] mx-auto text-xl sm:text-3xl mdtext-4xl pt-12">
           👋🏻Hello! I'm {profile[0].firstName},{" "}
           <span className="inline-block mb-1 mr-4 bg-indigo-700 h-[3px] w-12 " />
-          {profile[0].fullBio}
+          a creative and driven web developer with 3 years of experience in the
+          field. I thrive on turning imaginative ideas into digital realities,
+          constantly seeking innovative ways to blend design and technology.
         </p>
         <h1 className="xs:text-3xl md:text-5xl text-center font-dm leading-loose mx-auto w-[20ch] mt-32">
           {profile[0].serviceTitle}

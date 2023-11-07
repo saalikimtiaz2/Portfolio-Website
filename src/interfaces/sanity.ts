@@ -24,7 +24,6 @@ export interface ProfileType {
     image: string;
   };
   email: string;
-  fullBio: string;
   location: string;
   resumeURL: string;
   serviceTitle: string;

@@ -11,7 +11,6 @@ export async function getProfile() {
       subtitle,
       profileImage {alt, "image": asset->url},
       location,
-      fullBio,
       email,
       "resumeURL": resumeURL.asset->url,
       socialLinks,
