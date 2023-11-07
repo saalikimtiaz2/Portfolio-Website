@@ -1,19 +1,17 @@
 "use client";
+import Link from "next/link";
 import { getProfile } from "@/sanity/sanity.query";
-import { ProfileType } from "@/types-and-interfaces/sanity";
+import { ProfileType } from "@/interfaces/sanity";
+import { imageUrlFor } from "@/sanity/sanity.client";
+import Layout from "@/components/Layout";
+import { Typewriter } from "react-simple-typewriter";
+import getIcon from "@/helpers/getIcon";
 import type {
   serviceTypes,
   socialLinkTypes,
   techStackTypes,
-} from "@/types-and-interfaces/sanity";
-import { imageUrlFor } from "@/sanity/sanity.client";
-
-import Link from "next/link";
-import Layout from "@/components/Layout";
-import { MdOutlineDocumentScanner } from "react-icons/md";
-import { Typewriter } from "react-simple-typewriter";
-
-import getIcon from "@/helpers/getIcon";
+} from "@/interfaces/sanity";
+// import { MdOutlineDocumentScanner } from "react-icons/md";
 
 const wordsList = [
   "سلام",
