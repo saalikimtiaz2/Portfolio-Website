@@ -8,6 +8,10 @@
     "start": "next start",
     "lint": "next lint"
   },
+   "engines": {
+    "npm": ">=10.0.0",
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "@sanity/client": "^6.7.1",
     "@sanity/vision": "^3.19.1",
