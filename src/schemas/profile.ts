@@ -60,8 +60,7 @@ const profile = {
     {
       name: "fullBio",
       title: "Full Bio",
-      type: "array",
-      of: [{ type: "block" }],
+      type: "text",
     },
     {
       name: "resumeURL",
@@ -116,6 +115,34 @@ const profile = {
         collapsible: true,
         columns: 2,
       },
+    },
+    {
+      name: "serviceTitle",
+      title: "Services Title",
+      type: "string",
+    },
+    {
+      name: "services",
+      title: "Services",
+      type: "array",
+      description: "List of services that you provide",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Service Name",
+              type: "string",
+            },
+            {
+              name: "subtitle",
+              title: "Service Subtitle",
+              type: "string",
+            },
+          ],
+        },
+      ],
     },
   ],
 };

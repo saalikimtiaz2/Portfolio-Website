@@ -1,4 +1,4 @@
-import type { techStackTypes } from "@/types/techStackTypes";
+import type { techStackTypes } from "@/types-and-interfaces/techStackTypes";
 
 export const techStack: techStackTypes[] = [
   {

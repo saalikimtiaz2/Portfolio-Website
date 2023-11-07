@@ -31,16 +31,16 @@ function Header() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/about">About</Link>
+          <Link href="/">About</Link>
         </li>
         <li>
-          <Link href="/work">Work</Link>
+          <Link href="/">Work</Link>
         </li>
         <li>
-          <Link href="/projects">Projects</Link>
+          <Link href="/">Projects</Link>
         </li>
         <li>
-          <Link href="/contact">
+          <Link href="/">
             <button className="btn btn-primary btn-sm rounded-full">
               Contacts
             </button>

@@ -1,6 +1,7 @@
 "use client";
-// import { getProfile } from "@/sanity/sanity.query";
-// import type { ProfileType } from "@/types/sanity";
+import { getProfile } from "@/sanity/sanity.query";
+import { ProfileType } from "@/types-and-interfaces/sanity";
+import type { serviceTypes } from "@/types-and-interfaces/sanity";
 
 import Link from "next/link";
 import Layout from "@/components/Layout";
@@ -18,8 +19,10 @@ import { CiCoffeeCup } from "react-icons/ci";
 import { VscSettings } from "react-icons/vsc";
 import { BsFillTerminalFill } from "react-icons/bs";
 
-import type { techStackTypes } from "@/types/techStackTypes";
+import type { techStackTypes } from "@/types-and-interfaces/techStackTypes";
 import { techStack } from "@/dummyData/techStack";
+
+import getIcon from "@/helpers/getIcon";
 
 const socialIcons = [
   {
@@ -87,9 +90,13 @@ const services = [
   },
 ];
 
-const Home = () => {
-  // const profile: ProfileType[] = await getProfile();
-  // if (profile) console.log(profile);
+const Home = async () => {
+  const profile: ProfileType[] = await getProfile();
+  if (profile) console.log(profile);
+
+  if (!profile) {
+    return <span>Loading...</span>;
+  }
 
   return (
     <Layout>
@@ -102,11 +109,8 @@ const Home = () => {
           style={{ backgroundImage: `url('background/Meteor.svg')` }}
         >
           <div className="xs:px-4 lg:px-24">
-            <h1 className="xs:text-3xl md:text-5xl lg:text-[84px] font-dm leading-loose">
-              Crafting 🚀 Exceptional{" "}
-              <span className="block xs:pl-20 md:pl-32 font-dm ">
-                🔥 User Experiences
-              </span>
+            <h1 className="xs:text-3xl md:text-5xl lg:text-[84px] font-dm leading-loose w-[23ch]">
+              {profile[0].headline}
             </h1>
             <p className="mt-4 sm:w-[50ch] text-lg">
               <span className="text-white bg-primary inline-block px-2 py-1 font-medium rounded">
@@ -119,8 +123,7 @@ const Home = () => {
                 />
               </span>{" "}
               and welcome to my portfolio!
-              <br /> I'm thrilled to showcase my passion for crafting captiving
-              and functional websites.
+              <br /> {profile[0].subtitle}
             </p>
             <div className="md:flex items-center gap-x-4">
               <button className="btn btn-primary rounded-full mt-4">
@@ -153,18 +156,16 @@ const Home = () => {
           ))}
           <span className="sm:inline-block bg-black dark:bg-white h-[2px] w-32 xs:hidden" />
         </div>
-        <p className="text-center sm:w-[35ch] mx-auto text-xl sm:text-3xl mdtext-4xl mt-8">
-          👋🏻Hello! I'm Salik,{" "}
-          <span className="inline-block mb-1 bg-indigo-700 h-[3px] w-12 " /> a
-          creative and driven web developer with 3 years of experience in the
-          field. I thrive on turning imaginative ideas into digital retalities,
-          constantly seeking innovative ways to blend design and technology.
+        <p className="text-center sm:w-[35ch] mx-auto text-xl sm:text-3xl mdtext-4xl pt-12">
+          👋🏻Hello! I'm {profile[0].firstName},{" "}
+          <span className="inline-block mb-1 mr-4 bg-indigo-700 h-[3px] w-12 " />
+          {profile[0].fullBio}
         </p>
         <h1 className="xs:text-3xl md:text-5xl text-center font-dm leading-loose mx-auto w-[20ch] mt-32">
-          I'm specialize in a range of 💪 Skills
+          {profile[0].serviceTitle}
         </h1>
         <div className="lg:container mx-auto px-4 sm:px-20 pb-10 mt-20 grid grid-cols-12 gap-4 md:gap-8 lg:gap-12">
-          {services.map((service, idx) => (
+          {profile[0].services.map((service: serviceTypes, idx: number) => (
             <div
               key={service.title}
               className="xs:col-span-12 md:col-span-4 relative overflow-hidden rounded-lg px-8 py-16 text-center shadow-lg dark:border border-neutral-800 hover:border-primary hover:bg-primary hover:shadow-2xl hover:text-white transition-all duration-500 ease-in-out"
@@ -173,7 +174,7 @@ const Home = () => {
                 0{idx + 1}
               </span>
               <span className="inline-block mx-auto text-5xl">
-                {service.icon}
+                {getIcon(service.title)}
               </span>
               <h4 className="text-xl mt-6 mb-4">{service.title}</h4>
               <p className="text-sm w-[25ch] mx-auto">{service.subtitle}</p>

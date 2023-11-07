@@ -1,6 +1,11 @@
 import { PortableTextBlock } from "sanity";
 
-export type ProfileType = {
+export type serviceTypes = {
+  title: string;
+  subtitle: string;
+};
+
+export interface ProfileType {
   _id: string;
   firstName: string;
   lastName: string;
@@ -11,8 +16,10 @@ export type ProfileType = {
     image: string;
   };
   email: string;
-  fullBio: PortableTextBlock[];
+  fullBio: string;
   location: string;
   resumeURL: string;
+  serviceTitle: string;
+  services: serviceTypes[];
   socialLinks: string[];
-};
+}
