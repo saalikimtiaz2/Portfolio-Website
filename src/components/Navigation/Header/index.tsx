@@ -1,7 +1,7 @@
 "use client";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Header() {
   const [colorChange, setColorchange] = useState(false);
@@ -13,7 +13,9 @@ function Header() {
     }
   };
 
-  window.addEventListener("scroll", changeNavbarColor);
+  useEffect(() => {
+    window.addEventListener("scroll", changeNavbarColor);
+  }, []);
 
   return (
     <div
