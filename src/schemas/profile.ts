@@ -1,5 +1,5 @@
-import { defineField } from "sanity";
 import { BiUser } from "react-icons/bi";
+import { defineField } from "sanity";
 
 const profile = {
   name: "profile",
@@ -138,6 +138,11 @@ const profile = {
           ],
         },
       ],
+    },
+    {
+      name: "projectsHeading",
+      title: "Projects Heading",
+      type: "string",
     },
   ],
 };

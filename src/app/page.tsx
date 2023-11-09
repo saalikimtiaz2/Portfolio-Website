@@ -1,17 +1,18 @@
-"use client";
 import Link from "next/link";
-import { getProfile } from "@/sanity/sanity.query";
-import { ProfileType } from "@/interfaces/sanity";
-import { imageUrlFor } from "@/sanity/sanity.client";
+// import { MdOutlineDocumentScanner } from "react-icons/md";
 import Layout from "@/components/Layout";
-import { Typewriter } from "react-simple-typewriter";
+import Typewriter from "@/components/TypeWriter";
+import About from "@/containers/About";
+import Projects from "@/containers/Projects";
 import getIcon from "@/helpers/getIcon";
 import type {
   serviceTypes,
   socialLinkTypes,
   techStackTypes,
 } from "@/interfaces/sanity";
-// import { MdOutlineDocumentScanner } from "react-icons/md";
+import { ProfileType, projectTypes } from "@/interfaces/sanity";
+import { imageUrlFor } from "@/sanity/sanity.client";
+import { getProfile, getProjects } from "@/sanity/sanity.query";
 
 const wordsList = [
   "سلام",
@@ -28,7 +29,7 @@ const wordsList = [
 
 const Home = async () => {
   const profile: ProfileType[] = await getProfile();
-  if (profile) console.log(profile);
+  const projects: projectTypes[] = await getProjects();
 
   if (!profile) {
     return <span>Loading...</span>;
@@ -37,9 +38,6 @@ const Home = async () => {
   return (
     <Layout>
       <section className="flex h-[768px] z-50 relative landingArea bg-accent dark:bg-black ">
-        <p className="absolute top-[10rem] left-1/2 xs:text-4xl whitespace-nowrap md:text-[72px] text-slate-500 -translate-x-1/2 z-[150] font-dm font-bold opacity-5 dark:opacity-10">
-          <Typewriter words={wordsList} loop delaySpeed={3000} />
-        </p>
         <div
           className="absolute top-0 left-0 right-0 bottom-0 bg-cover py-20 flex flex-col justify-center"
           style={{ backgroundImage: `url('background/Meteor.svg')` }}
@@ -92,13 +90,7 @@ const Home = async () => {
           ))}
           <span className="sm:inline-block bg-black dark:bg-white h-[2px] w-32 xs:hidden" />
         </div>
-        <p className="text-center sm:w-[35ch] mx-auto text-xl sm:text-3xl mdtext-4xl pt-12">
-          👋🏻Hello! I'm {profile[0].firstName},{" "}
-          <span className="inline-block mb-1 mr-4 bg-indigo-700 h-[3px] w-12 " />
-          a creative and driven web developer with 3 years of experience in the
-          field. I thrive on turning imaginative ideas into digital realities,
-          constantly seeking innovative ways to blend design and technology.
-        </p>
+        <About />
         <h1 className="xs:text-3xl md:text-5xl text-center font-dm leading-loose mx-auto w-[20ch] mt-32">
           {profile[0].serviceTitle}
         </h1>
@@ -120,9 +112,9 @@ const Home = async () => {
           ))}
         </div>
       </section>
-      <section className="min-h-screen py-8 relative px-4">
+      <section className="py-8 relative px-4">
         <div className="lg:container mx-auto">
-          <h3 className="absolute top-4 left-1/2 -translate-x-1/2 z-20 text-4xl md:text-[84px] font-bold uppercase opacity-5">
+          <h3 className="absolute top-4 left-1/2 -translate-x-1/2 z-20 text-4xl md:text-[84px] font-light md:tracking-widest uppercase opacity-5">
             Technologies
           </h3>
           <h4 className="text-center font-dm text-3xl md:text-5xl z-50">
@@ -142,6 +134,14 @@ const Home = async () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="min-h-screen py-20 relative px-4 md:px-32">
+        <div className="lg:container mx-auto">
+          <h3 className="text-center mx-auto w-[19ch] font-dm text-3xl md:text-5xl z-50 my-20 ">
+            {profile[0].projectsHeading}
+          </h3>
+          <Projects projects={projects} />
         </div>
       </section>
     </Layout>

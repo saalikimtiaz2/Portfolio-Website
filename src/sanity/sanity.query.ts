@@ -16,7 +16,28 @@ export async function getProfile() {
       socialLinks,
       serviceTitle,
       services,
-      techStack
+      techStack,
+      projectsHeading
+    }` // Add [0] to select the first matching profile (if there are multiple profiles)
+  );
+}
+
+export async function getProjects() {
+  return client.fetch(
+    groq`*[_type == "projects"]{
+      _id,
+      title,
+      slug,
+      subtitle,
+      featured,
+      personal,
+      bgImage {alt, "image": asset->url},
+      url,
+      color,
+      technologies,
+      "logo": logo.asset->url,
+      "screenshot": screenshot.asset->url,
+      deliverables
     }` // Add [0] to select the first matching profile (if there are multiple profiles)
   );
 }

@@ -8,11 +8,12 @@
     "start": "next start",
     "lint": "next lint"
   },
-   "engines": {
+  "engines": {
     "npm": "10.x",
     "node": "18.x"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@sanity/client": "^6.7.1",
     "@sanity/vision": "^3.19.1",
     "install": "^0.13.0",

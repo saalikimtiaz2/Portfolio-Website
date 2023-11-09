@@ -1,5 +1,3 @@
-import { PortableTextBlock } from "sanity";
-
 export type serviceTypes = {
   title: string;
   subtitle: string;
@@ -30,4 +28,24 @@ export interface ProfileType {
   services: serviceTypes[];
   socialLinks: socialLinkTypes[];
   techStack: techStackTypes[];
+  projectsHeading: string;
+}
+
+export interface projectTypes {
+  _id: string;
+  title: string;
+  slug: string;
+  subtitle: string;
+  featured: boolean;
+  personal: boolean;
+  bgImage: {
+    alt: string;
+    image: string;
+  };
+  url: string;
+  color: string;
+  technologies: string[];
+  logo: string;
+  screenshot: string;
+  deliverables: string[];
 }
