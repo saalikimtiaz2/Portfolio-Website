@@ -11,7 +11,7 @@ const Projects = async ({
 }) => {
   return (
     <div style={{ paddingTop: "8rem" }}>
-      <div className="grid grid-cols-12 gap-10  ">
+      <div className="grid grid-cols-12 gap-x-10">
         {projects.map((project: sanity.projectTypes) => (
           <Card project={project} />
         ))}
