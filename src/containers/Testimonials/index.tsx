@@ -17,7 +17,7 @@ function Testimonials({ testimonials }: { testimonials: testimonialTypes[] }) {
         Recomandation
       </h4>
 
-      <div className="w-max mx-auto ">
+      <div className="w-max mx-auto mt-20">
         <div className="text-lg mt-32 body relative z-50">
           <img src="icons/qoutes.svg" className="qoute" />
           <PortableText value={[...testimonials[currReview].review]} />
