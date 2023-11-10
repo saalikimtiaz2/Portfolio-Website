@@ -49,3 +49,12 @@ export interface projectTypes {
   screenshot: string;
   deliverables: string[];
 }
+
+export interface testimonialTypes {
+  _id: string;
+  name: string;
+  designation: string;
+  company: string;
+  review: any;
+  image: string;
+}

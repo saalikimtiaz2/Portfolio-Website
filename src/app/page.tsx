@@ -3,16 +3,23 @@ import Link from "next/link";
 import Layout from "@/components/Layout";
 import Typewriter from "@/components/TypeWriter";
 import About from "@/containers/About";
+import Contact from "@/containers/Contact";
 import Projects from "@/containers/Projects";
+import Testimonials from "@/containers/Testimonials";
 import getIcon from "@/helpers/getIcon";
 import type {
   serviceTypes,
   socialLinkTypes,
   techStackTypes,
+  testimonialTypes,
 } from "@/interfaces/sanity";
 import { ProfileType, projectTypes } from "@/interfaces/sanity";
 import { imageUrlFor } from "@/sanity/sanity.client";
-import { getProfile, getProjects } from "@/sanity/sanity.query";
+import {
+  getProfile,
+  getProjects,
+  getTestimonials,
+} from "@/sanity/sanity.query";
 
 const wordsList = [
   "سلام",
@@ -30,6 +37,7 @@ const wordsList = [
 const Home = async () => {
   const profile: ProfileType[] = await getProfile();
   const projects: projectTypes[] = await getProjects();
+  const testimonials: testimonialTypes[] = await getTestimonials();
 
   if (!profile) {
     return <span>Loading...</span>;
@@ -144,6 +152,8 @@ const Home = async () => {
           <Projects projects={projects} />
         </div>
       </section>
+      <Testimonials testimonials={testimonials} />
+      <Contact />
     </Layout>
   );
 };

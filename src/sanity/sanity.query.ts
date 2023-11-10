@@ -41,3 +41,16 @@ export async function getProjects() {
     }` // Add [0] to select the first matching profile (if there are multiple profiles)
   );
 }
+
+export async function getTestimonials() {
+  return client.fetch(
+    groq`*[_type == "testimonials"]{
+      _id,
+      name,
+      designation,
+      company,
+      review,
+      image
+    }` // Add [0] to select the first matching profile (if there are multiple profiles)
+  );
+}

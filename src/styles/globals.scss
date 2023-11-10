@@ -28,3 +28,53 @@ code {
 .about {
   @apply text-center sm:w-[35ch] mx-auto text-xl sm:text-3xl pt-12 z-50 mt-8;
 }
+.contact {
+  border: none !important;
+  padding: 6rem 1rem 10rem;
+
+  h4 {
+    @apply w-[10ch] text-center text-5xl md:text-[96px]  mx-auto;
+    font-family: "DM Serif Display", serif !important;
+  }
+  button {
+    @apply h-24 w-24 text-5xl flex items-center justify-center mx-auto mt-24 rounded-full border-2 border-white text-white hover:bg-primary hover:border-primary hover:-rotate-45 overflow-hidden transition-all ease-in-out duration-500;
+  }
+}
+.testimonials {
+  padding-top: 1.5rem !important;
+  padding-bottom: 8rem;
+
+  .body {
+    width: 75ch !important;
+  }
+  .user {
+    font-size: 1rem;
+    margin-top: 1em;
+    span {
+      @apply text-black dark:text-white;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    @apply text-neutral-500;
+  }
+}
+.avatar {
+  height: 64px !important;
+  width: 64px !important;
+  cursor: pointer !important;
+  img {
+    padding: 4px !important;
+    width: 100%;
+    height: 100%;
+    border-radius: 64px;
+  }
+}
+.button-group {
+  justify-content: flex-end;
+  button {
+    @apply text-2xl flex items-center justify-center p-3 border rounded-full hover:text-white hover:bg-primary hover:border-primary hover:shadow-xl transition-all ease-in-out duration-500;
+    :disabled {
+      opacity: 0.2 !important;
+    }
+  }
+}
