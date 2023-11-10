@@ -1,5 +1,4 @@
-@import './colors';
-
+@import "./colors";
 
 .btn {
   @apply flex items-center justify-center gap-x-2 px-12 py-3  font-medium transition-all duration-500 ease-in-out;
@@ -17,4 +16,11 @@
 
 .btn-primary {
   @apply bg-primary text-white;
+}
+
+.btn-link {
+  color: #4338ca;
+  &:hover {
+    text-decoration: underline;
+  }
 }

@@ -15,7 +15,7 @@ function About() {
         <span className="inline-block mb-1 mr-4 bg-indigo-700 h-[3px] w-12 " />a
         creative and driven web developer with{" "}
         <button
-          className="inline-block text-indigo-700 hover:underline z-50"
+          className="inline-block btn-link hover:underline z-50"
           onClick={toggleModal}
         >
           3 years of experience
@@ -24,7 +24,11 @@ function About() {
         realities, constantly seeking innovative ways to blend design and
         technology.
       </p>
-      <Modal open={openModal} closeModal={toggleModal} title="Work Experience">
+      <Modal
+        open={openModal}
+        closeModal={toggleModal}
+        title="Employment History"
+      >
         Hello
       </Modal>
     </>

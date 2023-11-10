@@ -14,7 +14,7 @@ function Testimonials({ testimonials }: { testimonials: testimonialTypes[] }) {
         Testimonials
       </h3>
       <h4 className="text-center font-dm text-3xl md:text-5xl z-50 mb-20">
-        Recomandation
+        Recomandations
       </h4>
 
       <div className="w-max mx-auto mt-20">
@@ -23,7 +23,7 @@ function Testimonials({ testimonials }: { testimonials: testimonialTypes[] }) {
           <PortableText value={[...testimonials[currReview].review]} />
         </div>
 
-        <p className="user">
+        <p className="user flex flex-col md:flex-row item-baseline">
           <span className="inline-block font-bold text-base">
             {testimonials[currReview].name},
           </span>{" "}

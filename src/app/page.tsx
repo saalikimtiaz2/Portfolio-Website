@@ -88,7 +88,7 @@ const Home = async () => {
           </div>
         </div>
         <p>Follow Me:</p>
-        <div className="mt-4 flex items-center gap-4 flex-wrap">
+        <div className="mt-4 flex items-center gap-4 flex-wrap xs:justify-between sm:justify-start">
           {profile[0].socialLinks.map((social: socialLinkTypes) => (
             <Link key={social.name} href={social.url}>
               <button className="xs:h-10 sm:h-12 xs:w-10 sm:w-12 text-[1rem] sm:text-[1.5rem] flex items-center justify-center rounded-full border border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-500 ease-in-out">

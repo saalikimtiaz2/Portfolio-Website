@@ -45,10 +45,8 @@ code {
   padding-top: 1.5rem !important;
   padding-bottom: 8rem;
 
-  .body {
-    width: 75ch !important;
-  }
   .user {
+    width: fit-content;
     font-size: 1rem;
     margin-top: 1em;
     span {
@@ -82,7 +80,17 @@ code {
 .qoute {
   height: 6rem;
   position: absolute;
-  top: -2.5em;
-  left: -2.5em;
+  top: -2em;
+  left: -2em;
   opacity: 0.1;
+}
+
+.body {
+  width: fit-content !important;
+  p {
+    max-width: 75ch;
+    @media only screen and (max-width: 600px) {
+      max-width: 32ch;
+    }
+  }
 }
