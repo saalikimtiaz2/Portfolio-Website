@@ -21,7 +21,7 @@ function Header() {
     <div
       className={`fixed lg: w-full z-[150] top-0 bg-opacity-70 flex items-center justify-between py-2 xs:px-4 lg:px-24 text-black dark:text-white transition-all ease-in-out duration-500 ${
         colorChange
-          ? "bg-white dark:bg-black dark:bg-opacity-70 backdrop-blur-sm"
+          ? "bg-white/50 dark:bg-black/10 backdrop-blur-sm"
           : "bg-transparent"
       }`}
     >

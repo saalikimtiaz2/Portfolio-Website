@@ -10,7 +10,7 @@ function About() {
   };
   return (
     <>
-      <p className="text-center sm:w-[35ch] mx-auto text-xl sm:text-3xl mdtext-4xl pt-12 z-50">
+      <p className="about">
         👋🏻Hello! I'm Salik,{" "}
         <span className="inline-block mb-1 mr-4 bg-indigo-700 h-[3px] w-12 " />a
         creative and driven web developer with{" "}

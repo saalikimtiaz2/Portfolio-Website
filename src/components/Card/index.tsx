@@ -1,6 +1,5 @@
 import { projectTypes } from "@/interfaces/sanity";
 import hexRgb from "hex-rgb";
-import { redirect } from "next/navigation";
 import { useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 
@@ -29,15 +28,12 @@ const Card = ({ project }: { project: projectTypes }) => {
           <h4 className="text-lg font-medium capitaliz">{project.title}</h4>
           <p className="font-light">{project.subtitle}</p>
         </div>
-        <button
-          onClick={() => {
-            redirect(`${project.url}`);
-          }}
-          className="btn btn-primary btn-sm rou w-max"
-        >
-          View
-          <BsArrowRight />
-        </button>
+        <a href={project.url}>
+          <button className="btn btn-primary btn-sm rou w-max">
+            View
+            <BsArrowRight />
+          </button>
+        </a>
       </div>
     </div>
   );

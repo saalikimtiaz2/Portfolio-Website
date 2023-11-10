@@ -24,3 +24,7 @@ code {
     z-index: -1;
   }
 }
+
+.about {
+  @apply text-center sm:w-[35ch] mx-auto text-xl sm:text-3xl pt-12 z-50 mt-8;
+}
