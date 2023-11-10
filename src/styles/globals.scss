@@ -24,17 +24,3 @@ code {
     z-index: -1;
   }
 }
-
-.card {
-  @apply xs:col-span-12 sm:col-span-6 md:col-span-4 border;
-  min-height: 10rem !important;
-  padding: 13rem 1rem 1rem;
-  border: none !important;
-
-  img {
-    top: -8rem !important;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 20rem;
-  }
-}
