@@ -8,7 +8,7 @@ const Card = ({ project }: { project: projectTypes }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      className="h-[15rem] xs:col-span-12 sm:col-span-6 md:col-span-4 relative shadow-lg p-4 hover:shadow-2xl border border-neutral-100 dark:border-neutral-800 hover:border-transparent hover:text-white transition-all ease-in-out duration-500 md:first-of-type:rounded-s-xl  md:last-of-type:rounded-e-xl mb-[4rem]"
+      className="h-[15rem] xs:col-span-12 sm:col-span-6 md:col-span-4 relative shadow-lg p-4 hover:shadow-2xl border border-neutral-100 dark:border-neutral-800 hover:border-transparent hover:text-white transition-all ease-in-out duration-500 mb-[4rem]"
       style={{
         background: isHovered
           ? `linear-gradient(to  left, ${hexRgb(project.color, {
@@ -22,7 +22,7 @@ const Card = ({ project }: { project: projectTypes }) => {
     >
       <img
         src={project.bgImage.image}
-        className=" absolute right-0 bottom-0 h-[18rem] drop-shadow-2xl"
+        className=" absolute -right-[1px] -bottom-[1px] h-[18rem] drop-shadow-2xl"
       />
       <div className="w-1/2 flex justify-between flex-col h-full">
         <div>
@@ -31,9 +31,9 @@ const Card = ({ project }: { project: projectTypes }) => {
         </div>
         <button
           onClick={() => {
-            redirect(project.url);
+            redirect(`${project.url}`);
           }}
-          className="btn btn-primary btn-sm w-max"
+          className="btn btn-primary btn-sm rou w-max"
         >
           View
           <BsArrowRight />
