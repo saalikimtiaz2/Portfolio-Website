@@ -50,6 +50,7 @@ code {
     font-size: 1rem;
     margin-top: 1em;
     span {
+      display: block !important;
       @apply text-black dark:text-white;
       font-size: 1.2rem;
       font-weight: 600;

@@ -23,8 +23,8 @@ function Testimonials({ testimonials }: { testimonials: testimonialTypes[] }) {
           <PortableText value={[...testimonials[currReview].review]} />
         </div>
 
-        <p className="user flex flex-col md:flex-row item-baseline">
-          <span className="inline-block font-bold text-base">
+        <p className="user">
+          <span className="block font-bold text-base">
             {testimonials[currReview].name},
           </span>{" "}
           {testimonials[currReview].designation} at{" "}
