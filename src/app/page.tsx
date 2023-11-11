@@ -133,10 +133,10 @@ const Home = async () => {
           <div className="flex items-center justify-center gap-4 md:gap-12 flex-wrap pt-32">
             {profile[0].techStack.map((tech: techStackTypes) => (
               <div key={tech.title}>
-                <div className="h-28 w-28 flex items-center p-2 justify-center rounded-full shadow-inner dark:bg-neutral-700 bg-neutral-100 backdrop-blur-sm">
+                <div className="xs:h-24 sm:h-28 xs:w-24 sm:w-28 flex items-center p-2 justify-center rounded-full shadow-inner dark:bg-neutral-700 bg-neutral-100 backdrop-blur-sm">
                   <img
                     src={imageUrlFor(tech.logo).url()}
-                    className="h-16 w-auto"
+                    className="xs:h-14 sm:h-16 w-auto"
                     alt={`${tech.title}'s logo`}
                   />
                 </div>
