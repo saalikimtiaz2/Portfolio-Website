@@ -1,7 +1,7 @@
 import { MdReviews } from "react-icons/md";
 import { defineField } from "sanity";
 
-const Projects = {
+const Testimonials = {
   name: "testimonials",
   title: "Testimonials",
   type: "document",
@@ -40,4 +40,4 @@ const Projects = {
   ],
 };
 
-export default Projects;
+export default Testimonials;

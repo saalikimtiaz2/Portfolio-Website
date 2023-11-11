@@ -54,3 +54,19 @@ export async function getTestimonials() {
     }` // Add [0] to select the first matching profile (if there are multiple profiles)
   );
 }
+
+export async function getJobs() {
+  return client.fetch(
+    groq`*[_type == "jobs"]{
+      _id,
+      title,
+      company,
+      location,
+      startedDate,
+      endingDate,
+      stillWorking,
+      description,
+      logo
+    }` // Add [0] to select the first matching profile (if there are multiple profiles)
+  );
+}

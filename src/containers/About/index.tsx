@@ -1,8 +1,10 @@
 "use client";
+import JobCard from "@/components/JobCard";
 import Modal from "@/components/Modal";
+import { jobTypes } from "@/interfaces/sanity";
 import { useState } from "react";
 
-function About() {
+function About({ jobs }: { jobs: jobTypes[] }) {
   const [openModal, setOpenModal] = useState<boolean>(false);
 
   const toggleModal = () => {
@@ -29,7 +31,9 @@ function About() {
         closeModal={toggleModal}
         title="Employment History"
       >
-        Hello
+        {jobs.map((job) => (
+          <JobCard key={job._id} job={job} />
+        ))}
       </Modal>
     </>
   );

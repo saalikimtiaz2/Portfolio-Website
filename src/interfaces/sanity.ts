@@ -58,3 +58,15 @@ export interface testimonialTypes {
   review: any;
   image: string;
 }
+
+export interface jobTypes {
+  _id: string;
+  title: string;
+  company: string;
+  location: string;
+  startedDate: string;
+  endingDate: string;
+  stillWorking: boolean;
+  description: any;
+  logo: string;
+}

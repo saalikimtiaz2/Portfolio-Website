@@ -1,5 +1,5 @@
 "use client";
-import Card from "@/components/Card";
+import Card from "@/components/ProjectCard";
 import * as sanity from "@/interfaces/sanity";
 
 const Projects = async ({

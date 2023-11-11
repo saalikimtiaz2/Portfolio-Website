@@ -44,7 +44,7 @@ code {
   min-height: 85vh;
   padding-top: 1.5rem !important;
   padding-bottom: 8rem;
-
+  overflow-x: hidden;
   .user {
     width: fit-content;
     font-size: 1rem;
@@ -87,10 +87,21 @@ code {
 
 .body {
   width: fit-content !important;
+  max-width: 75ch;
   p {
-    max-width: 75ch;
-    @media only screen and (max-width: 600px) {
-      max-width: 32ch;
+    // max-width: 75ch;
+  }
+  @media only screen and (max-width: 768px) {
+    max-width: 30ch;
+  }
+}
+.jobCardWrapper {
+  ul {
+    li {
+      @apply mb-2 pl-2 list-disc ml-4;
+      &:last-of-type {
+        @apply border-b border-neutral-500 pb-6;
+      }
     }
   }
 }

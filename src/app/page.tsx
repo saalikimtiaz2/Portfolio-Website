@@ -13,9 +13,10 @@ import type {
   techStackTypes,
   testimonialTypes,
 } from "@/interfaces/sanity";
-import { ProfileType, projectTypes } from "@/interfaces/sanity";
+import { ProfileType, jobTypes, projectTypes } from "@/interfaces/sanity";
 import { imageUrlFor } from "@/sanity/sanity.client";
 import {
+  getJobs,
   getProfile,
   getProjects,
   getTestimonials,
@@ -38,6 +39,7 @@ const Home = async () => {
   const profile: ProfileType[] = await getProfile();
   const projects: projectTypes[] = await getProjects();
   const testimonials: testimonialTypes[] = await getTestimonials();
+  const jobs: jobTypes[] = await getJobs();
 
   if (!profile) {
     return <span>Loading...</span>;
@@ -98,7 +100,7 @@ const Home = async () => {
           ))}
           <span className="sm:inline-block bg-black dark:bg-white h-[2px] w-32 xs:hidden" />
         </div>
-        <About />
+        <About jobs={jobs} />
         <h1 className="xs:text-3xl md:text-5xl text-center font-dm leading-loose mx-auto w-[20ch] mt-32">
           {profile[0].serviceTitle}
         </h1>
