@@ -13,9 +13,11 @@ function Contact() {
   return (
     <div className="contact bg-black text-white">
       <h4>Let&apos;s work togather</h4>
-      <button onClick={toggleModal}>
-        <BsArrowRight />
-      </button>
+      <a href="mailto:r.salikimtiaz@gmail.com">
+        <button>
+          <BsArrowRight />
+        </button>
+      </a>
 
       <Modal open={showModal} closeModal={toggleModal} title="Contact">
         r.salikimtiaz@gmail.com
