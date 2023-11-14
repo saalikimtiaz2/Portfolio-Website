@@ -22,7 +22,7 @@ function Header() {
     <div
       className={`fixed lg: w-screen z-[150] top-0 bg-opacity-70 flex items-center justify-between py-1 xs:px-4 lg:px-24 text-black dark:text-white transition-all ease-in-out duration-500 ${
         colorChange
-          ? "bg-white/50 dark:bg-black/10 backdrop-blur-sm"
+          ? "bg-black/10 dark:bg-white/10 backdrop-blur-sm shadow-2xl"
           : "bg-transparent"
       }`}
     >
@@ -57,19 +57,19 @@ function Header() {
           </li>
           <li>
             <button
+              className="nav-link"
               onClick={() => scrolltoHash("contact")}
-              className="btn btn-primary btn-sm rounded-full"
             >
               Contacts
             </button>
           </li>
         </ul>
-        <ThemeSwitcher />
         <a href="mailto:r.salikimtiaz@gmail.com" target="_blank">
-          <button className="px-4 py-2 rounded-full border border-black dark:border-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white transition-all ease-in-out duration-500">
+          <button className="btn btn-primary btn-sm rounded-full">
             Hire Me
           </button>
         </a>
+        <ThemeSwitcher />
       </div>
     </div>
   );
