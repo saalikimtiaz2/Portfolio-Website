@@ -1,7 +1,7 @@
 "use client";
 import { Logo } from "@/components/SvgIcons";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import Link from "next/link";
+import { scrolltoHash } from "@/helpers/scrollHash";
 import { useEffect, useState } from "react";
 
 function Header() {
@@ -30,23 +30,38 @@ function Header() {
       <div className="flex items-center gap-x-4">
         <ul className="items-center gap-x-4 xs:hidden md:flex">
           <li>
-            <Link href="/">Home</Link>
+            <button className="nav-link" onClick={() => scrolltoHash("home")}>
+              Home
+            </button>
           </li>
           <li>
-            <Link href="/">About</Link>
+            <button className="nav-link" onClick={() => scrolltoHash("about")}>
+              About
+            </button>
           </li>
           <li>
-            <Link href="/">Work</Link>
+            <button
+              className="nav-link"
+              onClick={() => scrolltoHash("services")}
+            >
+              Services
+            </button>
           </li>
           <li>
-            <Link href="/">Projects</Link>
+            <button
+              className="nav-link"
+              onClick={() => scrolltoHash("projects")}
+            >
+              Work
+            </button>
           </li>
           <li>
-            <Link href="/">
-              <button className="btn btn-primary btn-sm rounded-full">
-                Contacts
-              </button>
-            </Link>
+            <button
+              onClick={() => scrolltoHash("contact")}
+              className="btn btn-primary btn-sm rounded-full"
+            >
+              Contacts
+            </button>
           </li>
         </ul>
         <ThemeSwitcher />

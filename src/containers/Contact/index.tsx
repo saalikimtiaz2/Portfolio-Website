@@ -11,7 +11,7 @@ function Contact() {
   };
 
   return (
-    <div className="contact bg-black text-white">
+    <div id="contact" className="contact bg-black text-white">
       <h4>Let&apos;s work togather</h4>
       <a href="mailto:r.salikimtiaz@gmail.com" target="_blank">
         <button>

@@ -7,7 +7,7 @@ const Card = ({ project }: { project: projectTypes }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      className="h-[15rem] xs:col-span-12 sm:col-span-6 md:col-span-4 relative shadow-lg p-4 hover:shadow-2xl border border-neutral-100 dark:border-neutral-800 hover:border-transparent hover:text-white transition-all ease-in-out duration-500 mb-[4rem]"
+      className="h-[15rem] xs:col-span-12 md:col-span-6 lg:col-span-4 :col-span-4 relative shadow-lg p-4 hover:shadow-2xl border border-neutral-100 dark:border-neutral-800 hover:border-transparent hover:text-white transition-all ease-in-out duration-500 mb-[4rem]"
       style={{
         background: isHovered
           ? `linear-gradient(to  left, ${hexRgb(project.color, {

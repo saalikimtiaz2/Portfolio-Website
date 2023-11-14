@@ -24,3 +24,7 @@
     text-decoration: underline;
   }
 }
+
+.nav-link {
+  @apply text-lg hover:text-primary transition-all ease-in-out duration-500;
+}

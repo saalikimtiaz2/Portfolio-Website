@@ -1,24 +1,36 @@
-import Link from "next/link";
+"use client";
+import { Logo } from "@/components/SvgIcons";
+import { scrolltoHash } from "@/helpers/scrollHash";
 
 function Footer() {
   return (
     <div className="bg-black text-white md:flex items-center justify-between px-4 md:px-32 py-4">
-      <h3>SALIK</h3>
+      <Logo height="52px" />
       <ul className="items-center gap-x-4 xs:hidden md:flex">
         <li>
-          <Link href="/">Home</Link>
+          <button className="nav-lick" onClick={() => scrolltoHash("home")}>
+            Home
+          </button>
         </li>
         <li>
-          <Link href="/">About</Link>
+          <button className="nav-lick" onClick={() => scrolltoHash("about")}>
+            About
+          </button>
         </li>
         <li>
-          <Link href="/">Work</Link>
+          <button className="nav-lick" onClick={() => scrolltoHash("services")}>
+            Services
+          </button>
         </li>
         <li>
-          <Link href="/">Projects</Link>
+          <button className="nav-lick" onClick={() => scrolltoHash("projects")}>
+            Work
+          </button>
         </li>
         <li>
-          <Link href="/">Contacts</Link>
+          <button className="nav-lick" onClick={() => scrolltoHash("contact")}>
+            Contacts
+          </button>
         </li>
       </ul>
     </div>

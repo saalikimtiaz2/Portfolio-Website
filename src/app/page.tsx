@@ -47,7 +47,10 @@ const Home = async () => {
 
   return (
     <Layout>
-      <section className="flex h-[768px] z-50 relative landingArea bg-accent dark:bg-black ">
+      <section
+        className="flex h-[768px] z-50 relative landingArea bg-accent dark:bg-black "
+        id="home"
+      >
         <div
           className="absolute top-0 left-0 right-0 bottom-0 bg-cover py-20 flex flex-col justify-center"
           style={{ backgroundImage: `url('background/Meteor.svg')` }}
@@ -80,7 +83,10 @@ const Home = async () => {
           </div>
         </div>
       </section>
-      <section className="relative bg-white dark:bg-neutral-900 py-40 px-4 lg:px-20 ">
+      <section
+        className="relative bg-white dark:bg-neutral-900 py-40 px-4 lg:px-20 "
+        id="about"
+      >
         <div className="absolute hover:scale-[1.05] transition-all duration-300 ease-in-out z-[100] xs:-top-[10rem] sm:-top-[16rem] md:-top-[20rem]  right-8 sm:right-16 xl:right-48 xs:h-[280px] md:h-[450px] xl:h-[550px] xs:w-[280px] md:w-[450px] xl:w-[550px] bg-indigo-700 rounded-lg rotate-6">
           <div>
             <img
@@ -101,7 +107,10 @@ const Home = async () => {
           <span className="sm:inline-block bg-black dark:bg-white h-[2px] w-32 xs:hidden" />
         </div>
         <About jobs={jobs} />
-        <h1 className="xs:text-3xl md:text-5xl text-center font-dm leading-loose mx-auto w-[20ch] mt-32">
+        <h1
+          id="services"
+          className="xs:text-3xl md:text-5xl text-center font-dm leading-loose mx-auto w-[20ch] mt-32"
+        >
           {profile[0].serviceTitle}
         </h1>
         <div className="lg:container mx-auto px-4 sm:px-20 pb-10 mt-20 grid grid-cols-12 gap-4 md:gap-8 lg:gap-12">
@@ -146,7 +155,10 @@ const Home = async () => {
           </div>
         </div>
       </section>
-      <section className="min-h-screen py-20 relative px-4 md:px-32">
+      <section
+        className="min-h-screen py-20 relative px-4 md:px-32"
+        id="projects"
+      >
         <div className="lg:container mx-auto">
           <h3 className="text-center mx-auto w-[19ch] font-dm text-3xl md:text-5xl z-50 my-20 ">
             {profile[0].projectsHeading}
