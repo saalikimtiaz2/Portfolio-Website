@@ -81,7 +81,7 @@ const Home = async () => {
         </div>
       </section>
       <section className="relative bg-white dark:bg-neutral-900 py-40 px-4 lg:px-20 ">
-        <div className="absolute hover:scale-[1.05] transition-all duration-300 ease-in-out z-[100] xs:-top-[10rem] sm:-top-[16rem] md:-top-[20rem]  right-8 sm:right-16 xl:right-48 xs:h-[300px] md:h-[450px] xl:h-[550px] xs:w-[300px] md:w-[450px] xl:w-[550px] bg-indigo-700 rounded-lg sm:rotate-6">
+        <div className="absolute hover:scale-[1.05] transition-all duration-300 ease-in-out z-[100] xs:-top-[10rem] sm:-top-[16rem] md:-top-[20rem]  right-8 sm:right-16 xl:right-48 xs:h-[280px] md:h-[450px] xl:h-[550px] xs:w-[280px] md:w-[450px] xl:w-[550px] bg-indigo-700 rounded-lg rotate-6">
           <div>
             <img
               src={profile[0].profileImage.image}

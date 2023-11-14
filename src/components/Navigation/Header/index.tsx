@@ -48,12 +48,9 @@ function Header() {
               </button>
             </Link>
           </li>
-          <li>
-            <ThemeSwitcher />
-          </li>
         </ul>
-
-        <a href="mailto:r.salikimtiaz@gmail.com">
+        <ThemeSwitcher />
+        <a href="mailto:r.salikimtiaz@gmail.com" target="_blank">
           <button className="px-4 py-2 rounded-full border border-black dark:border-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white transition-all ease-in-out duration-500">
             Hire Me
           </button>
