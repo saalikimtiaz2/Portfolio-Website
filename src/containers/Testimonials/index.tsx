@@ -10,11 +10,11 @@ function Testimonials({ testimonials }: { testimonials: testimonialTypes[] }) {
   const [currReview, setCurrReview] = useState<number>(0);
   return (
     <section className="px-4 sm:px-8 md:px-32 z-40 relative testimonials">
-      <h3 className="absolute top-4 left-1/2 -translate-x-1/2 z-50 text-4xl md:text-[84px] font-light md:tracking-widest uppercase opacity-5">
+      <h3 className="absolute top-3 left-1/2 -translate-x-1/2 z-50 text-5xl md:text-[84px] font-light md:tracking-widest uppercase opacity-5">
         Testimonials
       </h3>
       <h4 className="text-center font-dm text-3xl md:text-5xl z-50 mb-20">
-        Recomandations
+        Recommendations
       </h4>
 
       <div className="w-max mx-auto mt-20">
