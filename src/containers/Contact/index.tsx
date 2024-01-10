@@ -12,7 +12,7 @@ function Contact() {
 
   return (
     <div id="contact" className="contact bg-black text-white">
-      <h4>Let&apos;s work togather</h4>
+      <h4>Let&apos;s work together</h4>
       <a href="mailto:r.salikimtiaz@gmail.com" target="_blank">
         <button>
           <BsArrowRight />
