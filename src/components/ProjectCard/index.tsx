@@ -25,7 +25,7 @@ const Card = ({ project }: { project: projectTypes }) => {
       />
       <div className="w-1/2 flex justify-between flex-col h-full">
         <div>
-          <h4 className="text-lg font-medium capitaliz">{project.title}</h4>
+          <h4 className="text-lg font-medium capitaliz" id='project-tile'>{project.title}</h4>
           <p className="font-light">{project.subtitle}</p>
         </div>
         <a href={project.url}>
