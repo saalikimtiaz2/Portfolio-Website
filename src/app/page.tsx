@@ -1,6 +1,8 @@
 import Link from "next/link";
 // import { MdOutlineDocumentScanner } from "react-icons/md";
 import Layout from "@/components/Layout";
+import Loader from "@/components/Loader";
+import Meteore from "@/components/Meteore";
 import Typewriter from "@/components/TypeWriter";
 import About from "@/containers/About";
 import Contact from "@/containers/Contact";
@@ -42,22 +44,20 @@ const Home = async () => {
   const jobs: jobTypes[] = await getJobs();
 
   if (!profile) {
-    return <span>Loading...</span>;
+    return <Loader />;
   }
 
   return (
     <Layout>
       <section
-        className="flex h-[768px] z-50 relative landingArea bg-accent dark:bg-black "
+        className="flex h-[768px] z-50 relative landingArea bg-accent dark:bg-black overflow-x-hidden"
         id="home"
       >
-        <div
-          className="absolute top-0 left-0 right-0 bottom-0 bg-cover py-20 flex flex-col justify-center"
-          style={{ backgroundImage: `url('background/Meteor.svg')` }}
-        >
+        <Meteore />
+        <div className="absolute top-0 left-0 right-0 bottom-0 bg-cover py-20 flex flex-col justify-center">
           <div className="xs:px-4 lg:px-24">
             <h1 className="xs:text-3xl md:text-5xl lg:text-[84px] font-dm leading-loose w-[23ch]">
-              {profile[0].headline}
+              {profile[0].headline}!
             </h1>
             <p className="mt-4 sm:w-[50ch] text-lg">
               <span className="text-white bg-primary inline-block px-2 py-1 font-medium rounded">
@@ -73,9 +73,11 @@ const Home = async () => {
               <br /> {profile[0].subtitle}
             </p>
             <div className="md:flex items-center gap-x-4">
-              <button className="btn btn-primary rounded-full mt-4">
-                👋🏻 Let&apos;s Talk
-              </button>
+              <a href="mailto:r.salikimtiaz@gmail.com" target="_blank">
+                <button className="btn btn-primary rounded-full mt-4">
+                  👋🏻 Let&apos;s Talk
+                </button>
+              </a>
               {/* <button className="btn mt-4 btn-sm">
                 <MdOutlineDocumentScanner /> Download CV
               </button> */}
