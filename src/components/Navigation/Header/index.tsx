@@ -161,7 +161,7 @@ function Header() {
           </div>
           <a href="mailto:r.salikimtiaz@gmail.com" target="_blank">
             <button
-              className="btn btn-primary w-full text-4xl"
+              className="btn btn-primary w-full text-3xl"
               onClick={toggleDrawer}
             >
               Hire Me
