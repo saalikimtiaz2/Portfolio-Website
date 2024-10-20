@@ -3,6 +3,7 @@ import Link from "next/link";
 import Layout from "@/components/Layout";
 import Loader from "@/components/Loader";
 import Meteore from "@/components/Meteore";
+import TechCard from "@/components/TechCard";
 import Typewriter from "@/components/TypeWriter";
 import About from "@/containers/About";
 import Contact from "@/containers/Contact";
@@ -143,16 +144,11 @@ const Home = async () => {
           </h4>
           <div className="flex items-center justify-center gap-4 md:gap-12 flex-wrap pt-32">
             {profile[0].techStack.map((tech: techStackTypes) => (
-              <div key={tech.title}>
-                <div className="xs:h-24 sm:h-28 xs:w-24 sm:w-28 flex items-center p-2 justify-center rounded-full shadow-inner dark:bg-neutral-700 bg-neutral-100 backdrop-blur-sm">
-                  <img
-                    src={imageUrlFor(tech.logo).url()}
-                    className="xs:h-14 sm:h-16 w-auto"
-                    alt={`${tech.title}'s logo`}
-                  />
-                </div>
-                <p className="text-center mt-4">{tech.title}</p>
-              </div>
+              <TechCard
+                url={imageUrlFor(tech.logo).url()}
+                title={tech.title}
+                key={tech.title}
+              />
             ))}
           </div>
         </div>
