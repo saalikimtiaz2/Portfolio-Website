@@ -10,7 +10,7 @@
   },
   "engines": {
     "npm": "10.x",
-    "node": "18.x"
+    "node": "24.x"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
