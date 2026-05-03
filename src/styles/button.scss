@@ -1,30 +1,53 @@
-@import "./colors";
+/* ============================================================
+   Button system — design system: monochrome + blue accent
+   ============================================================ */
 
 .btn {
-  @apply flex items-center justify-center gap-x-2 px-12 py-3  font-medium transition-all duration-500 ease-in-out;
+  @apply inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-full px-6 py-3 text-sm font-medium tracking-tight transition-all duration-300 ease-out disabled:cursor-not-allowed disabled:opacity-40;
 }
 
 .btn-sm {
-  padding: 0.5em 1em !important;
+  @apply px-4 py-2 text-xs;
 }
 
 .btn-xs {
-  font-size: 14px !important;
-  font-weight: 600;
-  padding: 0.5em !important;
+  @apply px-3 py-1.5 text-[11px];
 }
 
+.btn-lg {
+  @apply px-8 py-4 text-base;
+}
+
+/* Solid */
 .btn-primary {
-  @apply bg-primary text-white;
+  @apply bg-ink-950 text-white hover:bg-ink-800 focus-visible:ring-2 focus-visible:ring-accent dark:bg-white dark:text-ink-950 dark:hover:bg-ink-100;
 }
 
+/* Accent (CTA blue) */
+.btn-accent {
+  @apply bg-accent text-white hover:bg-accent-hover focus-visible:ring-2 focus-visible:ring-accent;
+}
+
+/* Ghost / outline */
+.btn-ghost {
+  @apply border border-ink-200 bg-transparent text-ink-950 hover:border-ink-950 hover:bg-ink-950 hover:text-white dark:border-ink-800 dark:text-ink-50 dark:hover:border-ink-50 dark:hover:bg-ink-50 dark:hover:text-ink-950;
+}
+
+/* Subtle, on dark surfaces */
+.btn-subtle {
+  @apply bg-ink-100 text-ink-950 hover:bg-ink-200 dark:bg-ink-800 dark:text-ink-50 dark:hover:bg-ink-700;
+}
+
+/* Inline link button */
 .btn-link {
-  color: #4338ca;
-  &:hover {
-    text-decoration: underline;
-  }
+  @apply inline-flex cursor-pointer items-center gap-1 font-medium text-accent underline-offset-4 transition-colors duration-200 hover:underline;
 }
 
+/* Nav link */
 .nav-link {
-  @apply text-lg hover:text-primary transition-all ease-in-out duration-500;
+  @apply relative cursor-pointer text-sm font-medium text-ink-600 transition-colors duration-200 hover:text-ink-950 dark:text-ink-400 dark:hover:text-ink-50;
+}
+
+.nav-link[data-active="true"] {
+  @apply text-ink-950 dark:text-ink-50;
 }

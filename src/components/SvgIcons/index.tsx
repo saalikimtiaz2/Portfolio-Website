@@ -5,8 +5,11 @@ export const Logo = ({ height }: { height: string }) => {
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
       height={height}
-      fill="#4338CA"
+      className="text-ink-950 dark:text-ink-50"
+      fill="currentColor"
       viewBox="0 100 1200 1000"
+      aria-label="Salik Imtiaz logo"
+      role="img"
     >
       <g>
         <path

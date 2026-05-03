@@ -1,31 +1,21 @@
 "use client";
-import { gsap } from "gsap";
-import { useLayoutEffect, useRef } from "react";
 
 function Loader() {
-  const loaderMain = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    if (loaderMain.current) {
-      gsap.to(loaderMain.current, {
-        rotate: 360,
-      });
-
-      const circleElement = loaderMain.current.querySelector(".circle");
-      if (circleElement) {
-        gsap.to(circleElement, {
-          x: 100,
-        });
-      }
-    }
-  }, []);
-
   return (
     <div
-      className="absolute top-0 left-0 right-0 h-screen bg-primary z-[999]"
-      ref={loaderMain}
+      className="fixed inset-0 z-[999] flex items-center justify-center bg-ink-50 dark:bg-ink-950"
+      role="status"
+      aria-live="polite"
     >
-      hello
+      <div className="flex flex-col items-center gap-6">
+        <span className="relative flex h-3 w-3">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+          <span className="relative inline-flex h-3 w-3 rounded-full bg-accent" />
+        </span>
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-ink-500">
+          Loading
+        </p>
+      </div>
     </div>
   );
 }

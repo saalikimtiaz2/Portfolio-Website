@@ -2,114 +2,146 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./colors";
 @import "./button.scss";
 
-* {
-  @apply font-jost;
+/* ===========================================================
+   Base
+   =========================================================== */
+:root {
+  --bg: #fafafa;
+  --fg: #09090b;
+  --muted: #71717a;
+  --border: #e4e4e7;
+  --accent: #2563eb;
 }
 
-code {
-  @apply font-fira;
+.dark {
+  --bg: #09090b;
+  --fg: #fafafa;
+  --muted: #a1a1aa;
+  --border: #27272a;
 }
 
-.landingArea {
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply font-body text-ink-950 dark:text-ink-50;
+}
+
+code,
+pre,
+kbd {
+  @apply font-mono;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading tracking-tight;
+}
+
+::selection {
+  @apply bg-accent text-white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-ink-300 dark:bg-ink-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ink-400 dark:bg-ink-600;
+}
+
+/* Focus ring (a11y) */
+:focus-visible {
+  @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-ink-50 dark:ring-offset-ink-950 rounded-sm;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-.about {
-  @apply text-center sm:w-[35ch] mx-auto text-xl sm:text-3xl pt-12 z-50 mt-8;
-}
-.contact {
-  border: none !important;
-  padding: 6rem 1rem 10rem;
-
-  h4 {
-    @apply w-[10ch] text-center text-5xl md:text-[96px]  mx-auto;
-    font-family: "DM Serif Display", serif !important;
-  }
-  button {
-    @apply h-24 w-24 text-5xl flex items-center justify-center mx-auto mt-24 rounded-full border-2 border-white text-white hover:bg-primary hover:border-primary hover:-rotate-45 overflow-hidden transition-all ease-in-out duration-500;
-  }
-}
-.testimonials {
-  min-height: 85vh;
-  padding-top: 1.5rem !important;
-  padding-bottom: 8rem;
-  overflow-x: hidden;
-  .user {
-    width: fit-content;
-    font-size: 1rem;
-    margin-top: 1em;
-    span {
-      display: block !important;
-      @apply text-black dark:text-white;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-    @apply text-neutral-500;
-  }
-}
-.avatar {
-  height: 64px !important;
-  width: 64px !important;
-  cursor: pointer !important;
-  img {
-    padding: 4px !important;
-    width: 100%;
-    height: 100%;
-    border-radius: 64px;
-  }
-}
-.button-group {
-  justify-content: flex-end;
-  button {
-    @apply text-2xl flex items-center justify-center p-3 border rounded-full hover:text-white hover:bg-primary hover:border-primary hover:shadow-xl transition-all ease-in-out duration-500;
-    :disabled {
-      opacity: 0.2 !important;
-    }
-  }
-}
-.qoute {
-  height: 6rem;
-  position: absolute;
-  top: -2em;
-  left: -2em;
-  opacity: 0.1;
+/* ===========================================================
+   Reusable utility classes
+   =========================================================== */
+.section {
+  @apply relative py-24 md:py-32;
 }
 
-.body {
-  width: fit-content !important;
-  max-width: 75ch;
-  p {
-    // max-width: 75ch;
-  }
-  @media only screen and (max-width: 768px) {
-    max-width: 30ch;
-  }
+.section-eyebrow {
+  @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-ink-500 dark:text-ink-400;
 }
-.jobCardWrapper {
-  ul {
-    li {
-      @apply mb-2 pl-2 list-disc ml-4;
-      &:last-of-type {
-        @apply border-b border-neutral-500 pb-6;
-      }
-    }
-  }
+
+.section-eyebrow::before {
+  content: "";
+  @apply h-px w-8 bg-ink-300 dark:bg-ink-700;
 }
-.button-wrapper {
-  display: flex;
-  justify-content: center;
-  button {
-    @apply btn btn-sm rounded-full border border-neutral-500 text-neutral-500 hover:bg-indigo-500 hover:text-white hover:border-indigo-500;
-  }
+
+.section-title {
+  @apply mt-4 font-heading text-4xl font-semibold leading-[1.05] tracking-tightest text-ink-950 dark:text-ink-50 md:text-5xl lg:text-6xl;
+}
+
+.surface {
+  @apply border border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900;
+}
+
+.muted-text {
+  @apply text-ink-600 dark:text-ink-400;
+}
+
+.divider {
+  @apply h-px w-full bg-ink-200 dark:bg-ink-800;
+}
+
+/* Marquee mask */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 12%,
+    black 88%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 12%,
+    black 88%,
+    transparent
+  );
+}
+
+/* Job card list bullets (used inside Modal) */
+.jobCardWrapper ul li {
+  @apply mb-2 list-disc pl-2 ml-4 text-ink-600 dark:text-ink-400;
+}
+.jobCardWrapper ul li:last-of-type {
+  @apply pb-0;
+}
+
+/* PortableText defaults inside testimonials */
+.testimonial-body p {
+  @apply text-lg leading-relaxed text-ink-700 dark:text-ink-300;
 }

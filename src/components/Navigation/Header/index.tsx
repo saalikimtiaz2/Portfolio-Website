@@ -3,173 +3,151 @@ import Drawer from "@/components/Drawer";
 import { Logo } from "@/components/SvgIcons";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { scrolltoHash } from "@/helpers/scrollHash";
+import clsx from "clsx";
 import { useEffect, useState } from "react";
-import { IoClose } from "react-icons/io5";
-import { RiMenuFoldFill } from "react-icons/ri";
+import { HiArrowUpRight, HiBars3, HiXMark } from "react-icons/hi2";
+
+const NAV_ITEMS = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "services", label: "Services" },
+  { id: "projects", label: "Work" },
+  { id: "contact", label: "Contact" },
+];
 
 function Header() {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
-  const [colorChange, setColorchange] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
-  const toggleDrawer = () => {
-    setIsDrawerOpen((prevState) => !prevState);
-  };
-
-  const changeNavbarColor = () => {
-    if (window.scrollY >= 66) {
-      setColorchange(true);
-    } else {
-      setColorchange(false);
-    }
-  };
+  const toggleDrawer = () => setIsDrawerOpen((prev) => !prev);
 
   useEffect(() => {
-    window.addEventListener("scroll", changeNavbarColor);
+    const onScroll = () => setScrolled(window.scrollY >= 32);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <div
-      className={`fixed lg: w-screen z-[150] top-0 bg-opacity-70 flex items-center justify-between py-1 xs:px-4 lg:px-24 text-black dark:text-white transition-all ease-in-out duration-500 ${
-        colorChange
-          ? "bg-black/10 dark:bg-white/10 backdrop-blur-sm shadow-2xl"
-          : "bg-transparent"
-      }`}
+    <header
+      className={clsx(
+        "fixed inset-x-0 top-0 z-[150] flex justify-center px-4 pt-4 transition-all duration-300 ease-out md:px-6",
+        scrolled ? "pt-3" : "pt-6"
+      )}
     >
-      <Logo height="52px" />
-      <div className="flex items-center gap-x-4">
-        <ul className="items-center gap-x-4 xs:hidden md:flex">
-          <li>
-            <button className="nav-link" onClick={() => scrolltoHash("home")}>
-              Home
-            </button>
-          </li>
-          <li>
-            <button className="nav-link" onClick={() => scrolltoHash("about")}>
-              About
-            </button>
-          </li>
-          <li>
-            <button
-              className="nav-link"
-              onClick={() => scrolltoHash("services")}
-            >
-              Services
-            </button>
-          </li>
-          <li>
-            <button
-              className="nav-link"
-              onClick={() => scrolltoHash("projects")}
-            >
-              Work
-            </button>
-          </li>
-          <li>
-            <button
-              className="nav-link"
-              onClick={() => scrolltoHash("contact")}
-            >
-              Contacts
-            </button>
-          </li>
-          <li>
-            <a href="mailto:r.salikimtiaz@gmail.com" target="_blank">
-              <button className="btn btn-primary btn-sm rounded-full">
-                Hire Me
+      <nav
+        className={clsx(
+          "flex w-full max-w-6xl items-center justify-between rounded-full border px-4 py-2 transition-all duration-300 ease-out md:px-3 md:py-2",
+          scrolled
+            ? "border-ink-200/80 bg-white/80 shadow-card backdrop-blur-md dark:border-ink-800/80 dark:bg-ink-950/80"
+            : "border-transparent bg-transparent"
+        )}
+        aria-label="Primary"
+      >
+        <button
+          onClick={() => scrolltoHash("home")}
+          className="cursor-pointer rounded-full p-1 transition-opacity duration-200 hover:opacity-80"
+          aria-label="Go to home"
+        >
+          <Logo height="36px" />
+        </button>
+
+        <ul className="hidden items-center gap-1 md:flex">
+          {NAV_ITEMS.map((item) => (
+            <li key={item.id}>
+              <button
+                className="nav-link rounded-full px-4 py-2 hover:bg-ink-100 dark:hover:bg-ink-900"
+                onClick={() => scrolltoHash(item.id)}
+              >
+                {item.label}
               </button>
-            </a>
-          </li>
-          <li>
-            <ThemeSwitcher />
-          </li>
+            </li>
+          ))}
         </ul>
 
-        <button className="md:hidden text-3xl" onClick={toggleDrawer}>
-          <RiMenuFoldFill />
-        </button>
-      </div>
+        <div className="flex items-center gap-2">
+          <ThemeSwitcher />
+          <a
+            href="mailto:r.salikimtiaz@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex"
+          >
+            <button className="btn btn-primary btn-sm">
+              Hire me
+              <HiArrowUpRight className="text-sm" aria-hidden />
+            </button>
+          </a>
+          <button
+            className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-ink-200 text-ink-950 transition-colors duration-200 hover:bg-ink-100 dark:border-ink-800 dark:text-ink-50 dark:hover:bg-ink-900 md:hidden"
+            onClick={toggleDrawer}
+            aria-label="Open menu"
+            aria-expanded={isDrawerOpen}
+          >
+            <HiBars3 className="text-xl" aria-hidden />
+          </button>
+        </div>
+      </nav>
+
       <Drawer isOpen={isDrawerOpen} closeDrawer={toggleDrawer}>
-        <div className="flex flex-col justify-between h-full">
+        <div className="flex h-full flex-col justify-between">
           <div>
             <div className="flex items-center justify-between">
-              <Logo height="52px" />
-              <div className="flex items-center gap-x-4">
+              <Logo height="40px" />
+              <div className="flex items-center gap-2">
                 <ThemeSwitcher />
-
-                <button className="text-3xl" onClick={toggleDrawer}>
-                  <IoClose />
+                <button
+                  className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-ink-200 dark:border-ink-800"
+                  onClick={toggleDrawer}
+                  aria-label="Close menu"
+                >
+                  <HiXMark className="text-xl" aria-hidden />
                 </button>
               </div>
             </div>
-            <ul className="mt-10">
-              <li>
-                <button
-                  className="py-6 px-4 mt-6 text-5xl font-semibold font-jost capitalize"
-                  onClick={() => {
-                    scrolltoHash("home");
-                    toggleDrawer();
-                  }}
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
-                  className="py-6 px-4 mt-6 text-5xl font-semibold font-jost capitalize"
-                  onClick={() => {
-                    scrolltoHash("about");
-                    toggleDrawer();
-                  }}
-                >
-                  About
-                </button>
-              </li>
-              <li>
-                <button
-                  className="py-6 px-4 mt-6 text-5xl font-semibold font-jost capitalize"
-                  onClick={() => {
-                    scrolltoHash("services");
-                    toggleDrawer();
-                  }}
-                >
-                  Services
-                </button>
-              </li>
-              <li>
-                <button
-                  className="py-6 px-4 mt-6 text-5xl font-semibold font-jost capitalize"
-                  onClick={() => {
-                    scrolltoHash("projects");
-                    toggleDrawer();
-                  }}
-                >
-                  Work
-                </button>
-              </li>
-              <li>
-                <button
-                  className="py-6 px-4 mt-6 text-5xl font-semibold font-jost capitalize"
-                  onClick={() => {
-                    scrolltoHash("contact");
-                    toggleDrawer();
-                  }}
-                >
-                  Contacts
-                </button>
-              </li>
+
+            <ul className="mt-12 space-y-2">
+              {NAV_ITEMS.map((item, idx) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => {
+                      scrolltoHash(item.id);
+                      toggleDrawer();
+                    }}
+                    className="group flex w-full cursor-pointer items-center justify-between rounded-2xl px-4 py-5 text-left transition-colors duration-200 hover:bg-ink-100 dark:hover:bg-ink-900"
+                  >
+                    <span className="flex items-baseline gap-3">
+                      <span className="font-mono text-xs text-ink-400">
+                        0{idx + 1}
+                      </span>
+                      <span className="font-heading text-3xl font-semibold tracking-tight">
+                        {item.label}
+                      </span>
+                    </span>
+                    <HiArrowUpRight
+                      className="text-xl text-ink-400 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink-950 dark:group-hover:text-ink-50"
+                      aria-hidden
+                    />
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
-          <a href="mailto:r.salikimtiaz@gmail.com" target="_blank">
-            <button
-              className="btn btn-primary w-full text-3xl"
-              onClick={toggleDrawer}
-            >
-              Hire Me
+
+          <a
+            href="mailto:r.salikimtiaz@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={toggleDrawer}
+          >
+            <button className="btn btn-accent btn-lg w-full">
+              Let&apos;s work together
+              <HiArrowUpRight aria-hidden />
             </button>
           </a>
         </div>
       </Drawer>
-    </div>
+    </header>
   );
 }
 

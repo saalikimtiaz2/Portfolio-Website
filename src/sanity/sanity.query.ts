@@ -24,7 +24,7 @@ export async function getProfile() {
 
 export async function getProjects() {
   return client.fetch(
-    groq`*[_type == "projects"]{
+    groq`*[_type == "projects"] | order(featured desc, _updatedAt desc) {
       _id,
       title,
       slug,
@@ -38,7 +38,7 @@ export async function getProjects() {
       "logo": logo.asset->url,
       "screenshot": screenshot.asset->url,
       deliverables
-    }` // Add [0] to select the first matching profile (if there are multiple profiles)
+    }`
   );
 }
 

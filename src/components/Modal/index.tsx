@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
-import React, { Fragment } from "react";
-import { IoIosClose } from "react-icons/io";
+import { Fragment } from "react";
+import { HiXMark } from "react-icons/hi2";
 
 const Modal = ({
   open,
@@ -14,57 +14,56 @@ const Modal = ({
   children: React.ReactNode;
 }) => {
   return (
-    <>
-      <Transition appear show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-[999]" onClose={closeModal}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black/25 dark:bg-black/70 backdrop-blur-sm " />
-          </Transition.Child>
+    <Transition appear show={open} as={Fragment}>
+      <Dialog as="div" className="relative z-[999]" onClose={closeModal}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-ink-950/40 backdrop-blur-sm dark:bg-ink-950/70" />
+        </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="w-full max-w-md sm:max-w-xl relative transform overflow-hidden rounded-2xl text-black dark:text-white bg-white dark:bg-neutral-700 p-6 text-left align-middle shadow-xl transition-all">
-                  {title && (
-                    <Dialog.Title
-                      as="h3"
-                      className="text-lg font-medium leading-6  mb-6"
-                    >
-                      {title}
-                    </Dialog.Title>
-                  )}
-
-                  <button
-                    onClick={closeModal}
-                    className="absolute top-4 right-4 p-2 text-2xl opacity-50 hover:opacity-100"
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 translate-y-4 scale-95"
+              enterTo="opacity-100 translate-y-0 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 translate-y-0 scale-100"
+              leaveTo="opacity-0 translate-y-4 scale-95"
+            >
+              <Dialog.Panel className="relative w-full max-w-xl transform overflow-hidden rounded-3xl border border-ink-200 bg-white p-8 text-left shadow-lift transition-all dark:border-ink-800 dark:bg-ink-900">
+                {title && (
+                  <Dialog.Title
+                    as="h3"
+                    className="font-heading text-xl font-semibold tracking-tight text-ink-950 dark:text-ink-50"
                   >
-                    <IoIosClose />
-                  </button>
+                    {title}
+                  </Dialog.Title>
+                )}
 
-                  {children}
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
+                <button
+                  onClick={closeModal}
+                  aria-label="Close modal"
+                  className="absolute right-4 top-4 inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-ink-500 transition-colors duration-200 hover:bg-ink-100 hover:text-ink-950 dark:hover:bg-ink-800 dark:hover:text-ink-50"
+                >
+                  <HiXMark aria-hidden />
+                </button>
+
+                <div className={title ? "mt-6" : ""}>{children}</div>
+              </Dialog.Panel>
+            </Transition.Child>
           </div>
-        </Dialog>
-      </Transition>
-    </>
+        </div>
+      </Dialog>
+    </Transition>
   );
 };
 
