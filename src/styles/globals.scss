@@ -134,11 +134,18 @@ h6 {
 }
 
 /* Job card list bullets (used inside Modal) */
-.jobCardWrapper ul li {
-  @apply mb-2 list-disc pl-2 ml-4 text-ink-600 dark:text-ink-400;
+.jobCardWrapper ul {
+  @apply mt-1 space-y-1.5;
 }
-.jobCardWrapper ul li:last-of-type {
-  @apply pb-0;
+.jobCardWrapper ul li {
+  @apply relative pl-5 text-sm leading-relaxed text-ink-600 dark:text-ink-400;
+}
+.jobCardWrapper ul li::before {
+  content: "";
+  @apply absolute left-0 top-[0.6em] h-1 w-1 rounded-full bg-ink-400 dark:bg-ink-600;
+}
+.jobCardWrapper p + p {
+  @apply mt-2;
 }
 
 /* PortableText defaults inside testimonials */

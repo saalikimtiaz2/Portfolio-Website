@@ -24,6 +24,7 @@
     "next-sanity": "^6.0.1",
     "npm": "^10.2.3",
     "react": "^18",
+    "react-calendly": "^4.4.0",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "react-simple-typewriter": "^5.0.1",

@@ -20,7 +20,7 @@ function Hero({ profile }: { profile: ProfileType }) {
   return (
     <section
       id="home"
-      className="relative isolate flex min-h-screen items-center overflow-hidden bg-ink-50 dark:bg-ink-950"
+      className="relative isolate flex min-h-screen items-center overflow-hidden bg-ink-50 dark:bg-ink-950 pb-4"
     >
       <div
         aria-hidden
@@ -41,7 +41,7 @@ function Hero({ profile }: { profile: ProfileType }) {
         style={{ animationDelay: "4s" }}
       />
 
-      <div className="container relative mx-auto pt-32 md:pt-40">
+      <div className="md:container relative mx-auto pt-32 md:pt-40 px-4 md:px-0">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ function Hero({ profile }: { profile: ProfileType }) {
           transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
           className="mt-8 max-w-5xl font-heading text-[clamp(2.75rem,8vw,7rem)] font-semibold leading-[0.95] tracking-tightest text-ink-950 dark:text-ink-50"
         >
-          <span className="inline-flex items-center gap-3 align-baseline rounded-full bg-ink-950 px-4 py-1 text-[clamp(1rem,2vw,1.5rem)] font-medium text-white dark:bg-white dark:text-ink-950">
+          <span className="inline-flex items-center tracking-wide gap-3 align-baseline rounded-full bg-ink-950 px-4 py-1 text-[clamp(1rem,2vw,1.5rem)] font-medium text-white dark:bg-white dark:text-ink-950">
             <Typewriter
               words={GREETINGS}
               loop
@@ -113,7 +113,7 @@ function Hero({ profile }: { profile: ProfileType }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-24 flex items-center justify-between md:mt-32"
+          className="mt-20 flex items-center justify-between md:mt-32 "
         >
           <button
             onClick={() => scrolltoHash("about")}

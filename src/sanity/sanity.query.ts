@@ -57,7 +57,7 @@ export async function getTestimonials() {
 
 export async function getJobs() {
   return client.fetch(
-    groq`*[_type == "jobs"]{
+    groq`*[_type == "jobs"] | order(coalesce(startedDate, "1970-01-01") desc) {
       _id,
       title,
       company,
@@ -67,6 +67,6 @@ export async function getJobs() {
       stillWorking,
       description,
       logo
-    }` // Add [0] to select the first matching profile (if there are multiple profiles)
+    }`
   );
 }

@@ -5,14 +5,20 @@ import { HiXMark } from "react-icons/hi2";
 const Modal = ({
   open,
   closeModal,
+  eyebrow,
   title,
+  subtitle,
   children,
 }: {
   open: boolean;
+  eyebrow?: string;
   title?: string;
+  subtitle?: string;
   closeModal: () => void;
   children: React.ReactNode;
 }) => {
+  const hasHeader = Boolean(title || subtitle || eyebrow);
+
   return (
     <Transition appear show={open} as={Fragment}>
       <Dialog as="div" className="relative z-[999]" onClose={closeModal}>
@@ -39,14 +45,28 @@ const Modal = ({
               leaveFrom="opacity-100 translate-y-0 scale-100"
               leaveTo="opacity-0 translate-y-4 scale-95"
             >
-              <Dialog.Panel className="relative w-full max-w-xl transform overflow-hidden rounded-3xl border border-ink-200 bg-white p-8 text-left shadow-lift transition-all dark:border-ink-800 dark:bg-ink-900">
-                {title && (
-                  <Dialog.Title
-                    as="h3"
-                    className="font-heading text-xl font-semibold tracking-tight text-ink-950 dark:text-ink-50"
-                  >
-                    {title}
-                  </Dialog.Title>
+              <Dialog.Panel className="relative flex max-h-[85vh] w-full max-w-5xl transform flex-col overflow-hidden rounded-3xl border border-ink-200 bg-white text-left shadow-lift transition-all dark:border-ink-800 dark:bg-ink-900">
+                {hasHeader && (
+                  <div className="relative border-b border-ink-200 px-6 pb-5 pt-6 dark:border-ink-800 md:px-8 md:pb-6 md:pt-7">
+                    {eyebrow && (
+                      <p className="font-mono text-[10px] font-medium uppercase tracking-[0.22em] text-ink-500 dark:text-ink-400">
+                        {eyebrow}
+                      </p>
+                    )}
+                    {title && (
+                      <Dialog.Title
+                        as="h3"
+                        className="mt-2 pr-12 font-heading text-2xl font-semibold leading-tight tracking-tight text-ink-950 dark:text-ink-50 md:text-[28px]"
+                      >
+                        {title}
+                      </Dialog.Title>
+                    )}
+                    {subtitle && (
+                      <p className="mt-2 max-w-md pr-12 text-sm leading-relaxed text-ink-600 dark:text-ink-400">
+                        {subtitle}
+                      </p>
+                    )}
+                  </div>
                 )}
 
                 <button
@@ -57,7 +77,13 @@ const Modal = ({
                   <HiXMark aria-hidden />
                 </button>
 
-                <div className={title ? "mt-6" : ""}>{children}</div>
+                <div
+                  className={`flex-1 overflow-y-auto px-6 py-6 md:px-8 ${
+                    hasHeader ? "" : "pt-12"
+                  }`}
+                >
+                  {children}
+                </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>

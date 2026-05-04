@@ -10,7 +10,7 @@ function Services({ profile }: { profile: ProfileType }) {
       id="services"
       className="section border-t border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900"
     >
-      <div className="container mx-auto">
+      <div className="md:container mx-auto px-4 md:px-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

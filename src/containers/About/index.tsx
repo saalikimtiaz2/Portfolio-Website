@@ -33,7 +33,7 @@ function About({
       id="about"
       className="section bg-ink-50 dark:bg-ink-950"
     >
-      <div className="container mx-auto">
+      <div className="md:container mx-auto px-4 md:px-0">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -139,9 +139,13 @@ function About({
       <Modal
         open={openModal}
         closeModal={toggleModal}
-        title="Employment History"
+        eyebrow="Employment History"
+        title="A timeline of roles & teams"
+        subtitle={`${jobs.length} ${
+          jobs.length === 1 ? "position" : "positions"
+        } across product-driven companies, building polished interfaces end-to-end.`}
       >
-        <div className="space-y-2">
+        <div>
           {jobs.map((job) => (
             <JobCard key={job._id} job={job} />
           ))}

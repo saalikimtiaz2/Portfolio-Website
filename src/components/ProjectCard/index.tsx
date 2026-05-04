@@ -2,6 +2,7 @@
 import { projectTypes } from "@/interfaces/sanity";
 import { motion } from "framer-motion";
 import { HiArrowUpRight } from "react-icons/hi2";
+import { useState } from "react";
 
 const Card = ({
   project,
@@ -13,6 +14,8 @@ const Card = ({
   const logoUrl =
     typeof project.logo === "string" ? project.logo.trim() : "";
   const hasLogo = Boolean(logoUrl);
+  const [logoFailed, setLogoFailed] = useState(false);
+  const showLogo = hasLogo && !logoFailed;
 
   return (
     <motion.a
@@ -53,22 +56,25 @@ const Card = ({
         )}
 
         <div
-          className="pointer-events-none absolute inset-0 flex items-center justify-center bg-ink-950/0 transition-[background-color] duration-300 ease-out group-hover:bg-ink-950/85"
+          className="pointer-events-none absolute inset-0 flex items-center justify-center p-6 bg-ink-950/0 transition-[background-color] duration-300 ease-out group-hover:bg-ink-950/85"
           aria-hidden
         >
-          <div className="translate-y-2 scale-95 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100">
-            {hasLogo ? (
+          <div className="w-full max-w-[min(320px,92%)] translate-y-2 scale-95 rounded-2xl  px-7 py-5 shadow-card opacity-0 ring-1 ring-ink-200/90 backdrop-blur-sm transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 dark:ring-white/20">
+            {showLogo ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={logoUrl}
                 alt=""
-                className={`mx-auto max-w-[min(200px,78%)] object-contain drop-shadow-md ${
+                loading="lazy"
+                className={`mx-auto w-auto object-contain ${
                   featured ? "max-h-24 md:max-h-28" : "max-h-16 md:max-h-20"
                 }`}
+                style={{ maxWidth: "min(200px, 100%)" }}
+                onError={() => setLogoFailed(true)}
               />
             ) : (
               <p
-                className={`max-w-[85%] text-center font-heading font-semibold leading-tight tracking-tight text-white ${
+                className={`text-center font-heading font-semibold leading-tight tracking-tight text-white ${
                   featured ? "text-2xl md:text-3xl" : "text-lg md:text-xl"
                 }`}
               >

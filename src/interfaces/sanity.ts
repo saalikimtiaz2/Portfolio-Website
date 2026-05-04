@@ -68,5 +68,5 @@ export interface jobTypes {
   endingDate: string;
   stillWorking: boolean;
   description: any;
-  logo: string;
+  logo: string | null;
 }

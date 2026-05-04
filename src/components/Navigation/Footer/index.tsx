@@ -28,7 +28,7 @@ function Footer() {
 
   return (
     <footer className="border-t border-ink-200 bg-ink-50 dark:border-ink-800 dark:bg-ink-950">
-      <div className="container mx-auto py-16">
+      <div className="md:container mx-auto px-4 md:px-0 py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Logo height="40px" />
