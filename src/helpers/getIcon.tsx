@@ -10,6 +10,7 @@ const getIcon = (comp: string) => {
     case "facebook":
       return <FaFacebookF aria-hidden />;
     case "twitter":
+    case "x":
       return <FaXTwitter aria-hidden />;
     case "github":
       return <FaGithub aria-hidden />;
@@ -18,6 +19,7 @@ const getIcon = (comp: string) => {
     case "linkedin":
       return <FaLinkedinIn aria-hidden />;
     case "buy me a coffee":
+    case "buymeacoffee":
       return <CiCoffeeCup aria-hidden />;
     case "version control":
       return <VscSettings aria-hidden />;

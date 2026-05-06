@@ -1,32 +1,33 @@
 "use client";
-import JobCard from "@/components/JobCard";
-import Modal from "@/components/Modal";
-import {
-  jobTypes,
-  ProfileType,
-  socialLinkTypes,
-} from "@/interfaces/sanity";
+import { Tooltip } from "@/components/Tooltip";
+import { ProfileType, socialLinkTypes } from "@/interfaces/sanity";
 import getIcon from "@/helpers/getIcon";
+import { scrolltoHash } from "@/helpers/scrollHash";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
 import { HiArrowUpRight } from "react-icons/hi2";
 
-const STATS = [
-  { value: "3+", label: "Years of experience" },
-  { value: "20+", label: "Projects shipped" },
-  { value: "10+", label: "Happy clients" },
-];
-
 function About({
-  jobs,
   profile,
+  socialLinks,
+  yearsOfExperience,
 }: {
-  jobs: jobTypes[];
   profile: ProfileType;
+  socialLinks: socialLinkTypes[];
+  yearsOfExperience: number | null;
 }) {
-  const [openModal, setOpenModal] = useState<boolean>(false);
-  const toggleModal = () => setOpenModal((prev) => !prev);
+  const goToExperience = () => scrolltoHash("experience");
+
+  const yearsLabel = yearsOfExperience ? `${yearsOfExperience}+` : "3+";
+  const yearsCopy = yearsOfExperience
+    ? `${yearsOfExperience}+ years of experience`
+    : "3+ years of experience";
+
+  const stats = [
+    { value: yearsLabel, label: "Years of experience" },
+    { value: "20+", label: "Projects shipped" },
+    { value: "10+", label: "Happy clients" },
+  ];
 
   return (
     <section
@@ -83,10 +84,10 @@ function About({
               with{" "}
               <button
                 className="btn-link"
-                onClick={toggleModal}
-                aria-label="View employment history"
+                onClick={goToExperience}
+                aria-label="Jump to employment history"
               >
-                3+ years of experience
+                {yearsCopy}
               </button>{" "}
               shipping production-grade web applications. I thrive on turning
               imaginative ideas into digital realities &mdash; constantly
@@ -94,7 +95,7 @@ function About({
             </p>
 
             <div className="mt-10 grid grid-cols-3 gap-4 border-t border-ink-200 pt-8 dark:border-ink-800">
-              {STATS.map((stat) => (
+              {stats.map((stat) => (
                 <div key={stat.label}>
                   <p className="font-heading text-3xl font-semibold tracking-tight text-ink-950 dark:text-ink-50 md:text-4xl">
                     {stat.value}
@@ -111,21 +112,22 @@ function About({
                 Follow me
               </p>
               <div className="flex flex-wrap gap-2">
-                {profile.socialLinks?.map((social: socialLinkTypes) => (
-                  <Link
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.name}
-                    className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-ink-200 text-ink-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-ink-950 hover:bg-ink-950 hover:text-white dark:border-ink-800 dark:text-ink-300 dark:hover:border-ink-50 dark:hover:bg-ink-50 dark:hover:text-ink-950"
-                  >
-                    {getIcon(social.name)}
-                  </Link>
+                {socialLinks.map((social: socialLinkTypes) => (
+                  <Tooltip key={social.url} label={social.name}>
+                    <Link
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.name}
+                      className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-ink-200 text-ink-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-ink-950 hover:bg-ink-950 hover:text-white dark:border-ink-800 dark:text-ink-300 dark:hover:border-ink-50 dark:hover:bg-ink-50 dark:hover:text-ink-950"
+                    >
+                      {getIcon(social.name)}
+                    </Link>
+                  </Tooltip>
                 ))}
               </div>
               <button
-                onClick={toggleModal}
+                onClick={goToExperience}
                 className="btn btn-ghost btn-sm ml-auto"
               >
                 See experience
@@ -135,22 +137,6 @@ function About({
           </motion.div>
         </div>
       </div>
-
-      <Modal
-        open={openModal}
-        closeModal={toggleModal}
-        eyebrow="Employment History"
-        title="A timeline of roles & teams"
-        subtitle={`${jobs.length} ${
-          jobs.length === 1 ? "position" : "positions"
-        } across product-driven companies, building polished interfaces end-to-end.`}
-      >
-        <div>
-          {jobs.map((job) => (
-            <JobCard key={job._id} job={job} />
-          ))}
-        </div>
-      </Modal>
     </section>
   );
 }

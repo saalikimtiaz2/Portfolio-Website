@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import IntroLoader from "@/components/IntroLoader";
 import "../styles/globals.scss";
 
 const archivo = Archivo({
@@ -23,8 +24,30 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+const ogTitle = "SALIK IMTIAZ — Frontend Engineer";
+const ogDescription =
+  "Frontend engineer crafting fast, accessible, motion-driven web experiences.";
+
+function metadataBase(): URL {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (explicit) {
+    try {
+      return new URL(
+        explicit.startsWith("http") ? explicit : `https://${explicit}`
+      );
+    } catch {
+      /* fall through */
+    }
+  }
+  if (process.env.VERCEL_URL) {
+    return new URL(`https://${process.env.VERCEL_URL}`);
+  }
+  return new URL("http://localhost:3000");
+}
+
 export const metadata: Metadata = {
-  title: "Salik Imtiaz — Frontend Engineer & Web Developer",
+  metadataBase: metadataBase(),
+  title: "Salik Imtiaz | Frontend Engineer",
   description:
     "Personal portfolio of Salik Imtiaz, a frontend engineer focused on crafting fast, accessible, and beautifully animated web experiences.",
   keywords: [
@@ -36,11 +59,20 @@ export const metadata: Metadata = {
     "Portfolio",
   ],
   authors: [{ name: "Salik Imtiaz" }],
+  twitter: {
+    card: "summary_large_image",
+    creator: "@salik__imtiaz",
+    site: "@salik__imtiaz",
+    title: ogTitle,
+    description: ogDescription,
+  },
   openGraph: {
-    title: "Salik Imtiaz — Frontend Engineer",
-    description:
-      "Frontend engineer crafting fast, accessible, motion-driven web experiences.",
+    title: ogTitle,
+    description: ogDescription,
     type: "website",
+    siteName: "Salik Imtiaz",
+    locale: "en_US",
+    url: "/",
   },
 };
 
@@ -65,6 +97,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="bg-ink-50 text-ink-950 antialiased dark:bg-ink-950 dark:text-ink-50 font-body selection:bg-accent selection:text-white">
+        <IntroLoader />
         {children}
       </body>
     </html>

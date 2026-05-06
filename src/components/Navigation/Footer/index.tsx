@@ -1,29 +1,20 @@
 "use client";
 import { Logo } from "@/components/SvgIcons";
+import { Tooltip } from "@/components/Tooltip";
+import getIcon from "@/helpers/getIcon";
 import { scrolltoHash } from "@/helpers/scrollHash";
-import {
-  FaGithub,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import type { socialLinkTypes } from "@/interfaces/sanity";
 
 const NAV_ITEMS = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
   { id: "services", label: "Services" },
   { id: "projects", label: "Work" },
   { id: "contact", label: "Contact" },
 ];
 
-const SOCIALS = [
-  { href: "https://github.com/", label: "GitHub", Icon: FaGithub },
-  { href: "https://linkedin.com/", label: "LinkedIn", Icon: FaLinkedinIn },
-  { href: "https://twitter.com/", label: "Twitter", Icon: FaXTwitter },
-  { href: "https://instagram.com/", label: "Instagram", Icon: FaInstagram },
-];
-
-function Footer() {
+function Footer({ socialLinks }: { socialLinks: socialLinkTypes[] }) {
   const year = new Date().getFullYear();
 
   return (
@@ -63,17 +54,19 @@ function Footer() {
           <div className="md:col-span-4">
             <p className="section-eyebrow">Elsewhere</p>
             <ul className="mt-6 flex flex-wrap gap-2">
-              {SOCIALS.map(({ href, label, Icon }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-ink-200 text-ink-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-ink-950 hover:bg-ink-950 hover:text-white dark:border-ink-800 dark:text-ink-300 dark:hover:border-ink-50 dark:hover:bg-ink-50 dark:hover:text-ink-950"
-                  >
-                    <Icon aria-hidden />
-                  </a>
+              {socialLinks.map(({ name, url }) => (
+                <li key={url}>
+                  <Tooltip label={name}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={name}
+                      className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-ink-200 text-ink-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-ink-950 hover:bg-ink-950 hover:text-white dark:border-ink-800 dark:text-ink-300 dark:hover:border-ink-50 dark:hover:bg-ink-50 dark:hover:text-ink-950"
+                    >
+                      {getIcon(name)}
+                    </a>
+                  </Tooltip>
                 </li>
               ))}
             </ul>

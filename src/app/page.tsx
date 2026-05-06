@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import Loader from "@/components/Loader";
 import About from "@/containers/About";
 import Contact from "@/containers/Contact";
+import Experience from "@/containers/Experience";
 import Hero from "@/containers/Hero";
 import Projects from "@/containers/Projects";
 import Services from "@/containers/Services";
@@ -19,6 +20,8 @@ import {
   getProjects,
   getTestimonials,
 } from "@/sanity/sanity.query";
+import { getYearsOfExperience } from "@/helpers/yearsOfExperience";
+import { resolveSocialLinks } from "@/config/social";
 
 /** Fetch Sanity on every request (no static HTML cache for this route). Refresh the browser to see Studio changes immediately. */
 export const dynamic = "force-dynamic";
@@ -34,11 +37,18 @@ const Home = async () => {
   }
 
   const currentProfile = profile[0];
+  const yearsOfExperience = getYearsOfExperience(jobs);
+  const socialLinks = resolveSocialLinks(currentProfile.socialLinks);
 
   return (
-    <Layout>
+    <Layout socialLinks={socialLinks}>
       <Hero profile={currentProfile} />
-      <About jobs={jobs} profile={currentProfile} />
+      <About
+        profile={currentProfile}
+        socialLinks={socialLinks}
+        yearsOfExperience={yearsOfExperience}
+      />
+      <Experience jobs={jobs} resumeURL={currentProfile.resumeURL} />
       <Services profile={currentProfile} />
       <TechStack profile={currentProfile} />
       <Projects projects={projects} profile={currentProfile} />

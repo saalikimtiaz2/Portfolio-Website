@@ -10,6 +10,7 @@ import { HiArrowUpRight, HiBars3, HiXMark } from "react-icons/hi2";
 const NAV_ITEMS = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
   { id: "services", label: "Services" },
   { id: "projects", label: "Work" },
   { id: "contact", label: "Contact" },

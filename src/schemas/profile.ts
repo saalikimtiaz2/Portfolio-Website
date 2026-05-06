@@ -66,7 +66,8 @@ const profile = {
       name: "socialLinks",
       title: "Social Links",
       type: "array",
-      description: "Add your social media links:",
+      description:
+        "Add your social media links. If this list is empty, the site uses defaults from src/config/social.ts.",
       of: [
         {
           type: "object",

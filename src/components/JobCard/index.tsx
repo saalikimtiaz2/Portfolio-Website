@@ -52,9 +52,9 @@ function JobCard({ job }: { job: jobTypes }) {
   const logoSrc = jobLogoUrl(job.logo);
 
   return (
-    <div className="jobCardWrapper group relative pb-7 pl-16 last:pb-0 before:absolute before:left-[1.4rem] before:top-12 before:bottom-0 before:w-px before:-translate-x-1/2 before:bg-gradient-to-b before:from-ink-200 before:via-ink-200 before:to-transparent last:before:hidden dark:before:from-ink-700 dark:before:via-ink-800">
-      <div className="absolute left-0 top-0 z-10">
-        <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-ink-200 bg-white shadow-soft transition-colors duration-300 group-hover:border-ink-300 dark:border-ink-700 dark:bg-ink-800 dark:group-hover:border-ink-600">
+    <div className="jobCardWrapper  border-l border-dashed border-ink-400 dark:border-ink-800 group relative pb-7 pl-8 md:pl-16 last:pb-0 before:absolute before:left-[1.4rem] before:top-12 before:bottom-0 before:w-px before:-translate-x-1/2 before:bg-gradient-to-b before:from-ink-200 before:via-ink-200 before:to-transparent last:before:hidden dark:before:from-ink-700 dark:before:via-ink-800">
+      <div className="absolute -left-[25px] top-0 z-10 ">
+        <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-ink-200 bg-ink-300 shadow-soft transition-colors duration-300 group-hover:border-ink-300 dark:border-ink-700 dark:bg-ink-800 dark:group-hover:border-ink-600">
           {logoSrc ? (
             // eslint-disable-next-line @next/next/no-img-element -- CMS asset URL
             <img
@@ -64,7 +64,7 @@ function JobCard({ job }: { job: jobTypes }) {
             />
           ) : (
             <HiBuildingOffice2
-              className="h-7 w-7 text-ink-400 dark:text-ink-500"
+              className="h-7 w-7 text-white"
               aria-hidden
             />
           )}
@@ -80,7 +80,7 @@ function JobCard({ job }: { job: jobTypes }) {
         )}
       </div>
 
-      <div className="rounded-2xl border border-ink-200/80 bg-white p-5 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-ink-300 group-hover:shadow-card dark:border-ink-800 dark:bg-ink-900/60 dark:group-hover:border-ink-700 dark:group-hover:bg-ink-900">
+      <div className="p-5 transition-all duration-300 group-hover:-translate-y-0.5 ">
         <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
           <div className="min-w-0">
             <h5 className="font-heading text-base font-semibold leading-tight text-ink-950 dark:text-ink-50 md:text-lg">
